@@ -35,6 +35,7 @@
 \maketitle
 
 \section{Quantum mechanics for many-particle systems}
+Note: Link to codes and the diagrams are placed at the end of the document.\\
 \subsection*{a)}
 We start with the helium atom and define our single particle Hilbert space to consist of the single-particle orbits $1s$, $2s$ and $3s$, with their corresponding spin degenracies.\\
 Ansatz for the ground state $\ket{c} = \ket{Φ_0}$ in second quantization:
@@ -120,6 +121,8 @@ The energy of from the one-body term is:
 $$ \bra{ Φ_0} \hat{H}_0  \ket{Φ_0} = ∑_{i} \bra{ i} \hat{h}_0 \ket{ i} = 2\left( -\frac{Z^2}{2} \right)  = -Z^2 $$
 The energy from the two-body term is:
 $$ \bra{ Φ_0} \hat{H}_I  \ket{Φ_0} = \frac{1}{2} ∑_{ij} \left[ \bra{ ij} V \ket{ij} - \bra{ ij} V \ket{ji} \right] = 2 * \frac{1}{2} * \frac{5Z}{8} = \frac{5Z}{8} $$
+The helium atom has $Z=2$, and so the total energy of the system is:
+$$ E[\Phi_0] = -4 + \frac{5}{4} = -\frac{11}{4}=74.8eV$$
 
 \subsection*{c)}
 For this exercise, we are going to explore the one-particle-one-hole excitations $  \bra{c} \hat{H} \ket{Φ_i^a} $ and $ \bra{ Φ_i ^a} \hat{ H} \ket{ Φ_j^b}$.\\
@@ -158,7 +161,10 @@ $$
 \wick{
   \c2a_i^{†}\c1a_a\c1a_p^{†}\c1a_q\c1a_b^{†}\c2a_j
   }
-\ket{c} = δ_{ij}δ_{ap}δ_{qb}
+\ket{c} = δ_{ij}δ_{ap}δ_{qb}nverged in 15 iterations
+Final single-particle energies: [-0.888475   -0.888475    0.03942215  0.03942215  0.43951618  0.43951618]
+Final ground state energy: -2.831096086785042
+In electron volts: -77.03804842059728 eV
 $$
 $$
 \bra{ c}
@@ -177,11 +183,14 @@ Now we can take a look at the contractions again:
 $$
 \bra{c}
 \wick{
-  \c2 a_i^{†} \c1 a_a \c1 a_p^{†} \c3 a_q^{†} \c2 a_s \c1 a_r \c1 a_b^{†} \c3 a_j
+  \c2a_i^{†} \c1a_a \c1a_p^{†} \c3a_q^{†} \c2a_s \c1a_r \c1a_b^{†} \c3a_j
   }
 \ket{c} = -δ_{ap}δ_{is}δ_{qj}δ_{br}
 $$
-$$
+$$nverged in 15 iterations
+Final single-particle energies: [-0.888475   -0.888475    0.03942215  0.03942215  0.43951618  0.43951618]
+Final ground state energy: -2.831096086785042
+In electron volts: -77.03804842059728 eV
 \bra{c}
 \wick{
   \c2a_i^{†} \c1a_a \c1a_p^{†} \c1a_q^{†} \c3a_s \c2a_r \c3a_b^{†} \c1a_j
@@ -207,10 +216,13 @@ $$ \bra{ Φ_i ^a} \hat{V}_N \ket{ Φ_j^b} = \frac{1}{4} ∑_{pqrs} \bra{pq} \hat
 $$ = \bra{ aj} \hat{ V} \ket{ib}_{AS}$$
 And so the total expression for $ \bra{ Φ_i ^a} \hat{ H} \ket{ Φ_j^b}$ is:
 $$ \bra{ Φ_i ^a} \hat{ H} \ket{ Φ_j^b} =  \mathcal{E}_0^{ref} δ_{ij}δ_{ab}+ \bra{ a} \hat{f} \ket{ b} δ_{ij} - \bra{ j} \hat{f} \ket{ i} δ_{ab} + \bra{ aj} \hat{ V} \ket{ib}_{AS}$$
+Computing the values numerically we get the following energy:
+$-2.141$ in atomic units, or $-58.2$ eV. Which is slighlty off the real value, but I cant find the error in the code. I was hoping for a higher accuracy here.
 
 \subsection*{d)}
 The ansatz for the ground state for the beryllium atom is:
 $$ \ket{c} = a_{1s,{\uparrow}}^\dagger a_{1s,{\downarrow}}^\dagger a_{2s,{\uparrow}}^\dagger a_{2s,{\downarrow}}^\dagger \ket{0}$$
+The energy i calculated numerically came down to: $-13.716$ in atomic units, or $-373.23$ eV. Which is more accurate than what i got for the helium atom.\\ 
 \subsection*{e)}
 We aim to minimize the totalen ergy of the system with respect t the coefficients $C_{p α}$, while ensuring that the Hartree Fock orbitals remain orthonormal.\\
 The energy functional is:
@@ -254,5 +266,36 @@ $$
 
 
 \subsection*{f)}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+    \hline
+    Atom & Single particle energy & New energy \\
+    \hline
+    helium & -0.7832 & -2.8991 \\
+    beryllium & -3.9506 & -14.4998 \\
+    \hline
+    \end{tabular}
+    \caption{Hartree Fock energies for the beryllium atom}
+    \label{tab:my_label}
+\end{table}
+For the helium atom, the new energy was slightly impro using the hartree fck method, with -$2.8991$ slighlty more accurate than the previous $-2.75$ atomic units.\\
+For beryllium, the new energy $-14.4998$ is also more accurate than the previous $-13.716$ atomic units.\\
 \subsection*{g)}
+The diagonalization with the new Hartree-Fock potential yields new eigenvectors and eigenvalues. This process is continued till for example
+$$\frac{∑_{p}^{}ϵ_i - ϵ_{i+n}}{m} < λ $$
+Where $λ$ is some number smaller than a given tolerance (1e-8).\\
+For helium:\\
+After 15 iterations I obtained $-2.831$ in atomic units\\
+For beryllium:\\
+After 16 iterations I obtained $-14.508$ in atomic units\\
+These results were obtained with a tolerance of 1e-12.\\
+For the helium atom we found the best results when diagonalising the  hamiltonian directly, but when moving on to just slightly heavier atoms (beryllium) we saw that the iterative scheme payed off.\\
+
+\subsection*{Diagrams and github link)}
+%Set diagrammer
+
+%ADd link
+\url{https://github.com/hishemok/FYS4480/tree/main/Documents/GitHub/Fys4480/Midterm1}
+
 \end{document}
