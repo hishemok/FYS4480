@@ -18,7 +18,7 @@ def read_elements(Z_val: int) -> np.ndarray:
     Returns:
         np.ndarray: The matrix elements.
     """
-    path = "Midterm1/Src/Matrix_elements.txt"
+    path = "Src/Matrix_elements.txt"
     elements = np.zeros((3, 3, 3, 3), dtype=object)
 
     with open(path, "r") as infile:

@@ -12,8 +12,10 @@
 \usepackage{physics}
 \usepackage{unicode-math}
 \usepackage{lmodern}
+\usepackage{pdfpages}
 \usepackage{simpler-wick}
 \usepackage{unicode-math}
+\usepackage{caption}
 
 % Page geometry
 \geometry{margin=1in}
@@ -266,24 +268,27 @@ $$
 
 
 \subsection*{f)}
-\begin{table}[h]
-    \centering
-    \begin{tabular}{|c|c|c|}
-    \hline
-    Atom & Single particle energy & New energy \\
-    \hline
-    helium & -0.7832 & -2.8991 \\
-    beryllium & -3.9506 & -14.4998 \\
-    \hline
-    \end{tabular}
-    \caption{Hartree Fock energies for the beryllium atom}
-    \label{tab:my_label}
-\end{table}
-For the helium atom, the new energy was slightly impro using the hartree fck method, with -$2.8991$ slighlty more accurate than the previous $-2.75$ atomic units.\\
-For beryllium, the new energy $-14.4998$ is also more accurate than the previous $-13.716$ atomic units.\\
+Here i used the Hartree.py file and set up Hartree-Fock matrices for helium and beryllium atoms, indexing single-particle states as 1 = 1s+, 2 = 1s−, ..., 6 = 3s−.
+
+For helium, after the first diagonalization, the single-particle energies are:
+\[
+ϵ _1, ϵ _2 = -0.7832, \quad ϵ _3, ϵ _4 = 0.0396, \quad ϵ _5 ,ϵ _6 = 0.4534
+\]
+The new ground state energy is −2.8292 atomic units, improving on the Z-minimization result of −2.75, but slightly worse than the fully diagonalized value of −2.8386.
+
+For beryllium, the single-particle energies after the first diagonalization are:
+\[
+ϵ _1 , ϵ _2 = -3.9507, \quad ϵ _3 , ϵ _4 = -0.1040, \quad ϵ _5 , ϵ _6 = 0.8656 
+\]
+The ground state energy is −14.4998, significantly better than the Z-minimized result of −13.7159.
+
+
 \subsection*{g)}
-The diagonalization with the new Hartree-Fock potential yields new eigenvectors and eigenvalues. This process is continued till for example
-$$\frac{∑_{p}^{}ϵ_i - ϵ_{i+n}}{m} < λ $$
+Setting up the iterative scheme now involves repeating the diagonalization process from earlier until convergence is reached. Convergence is measured by checking the condition:
+\[
+\frac{|ϵ ^{(n)} - ϵ ^{(n-1)}|}{m} \leq \lambda,
+\]
+where $ϵ ^{(n)}$ 
 Where $λ$ is some number smaller than a given tolerance (1e-8).\\
 For helium:\\
 After 15 iterations I obtained $-2.831$ in atomic units\\
@@ -292,10 +297,23 @@ After 16 iterations I obtained $-14.508$ in atomic units\\
 These results were obtained with a tolerance of 1e-12.\\
 For the helium atom we found the best results when diagonalising the  hamiltonian directly, but when moving on to just slightly heavier atoms (beryllium) we saw that the iterative scheme payed off.\\
 
+
+
 \subsection*{Diagrams and github link)}
 %Set diagrammer
 
-%ADd link
+
 \url{https://github.com/hishemok/FYS4480/tree/main/Documents/GitHub/Fys4480/Midterm1}
+\newpage
+
+\newpage
+\includepdf[pages=1]{Fys4480mid1.pdf} % First page
+\captionof{figure}{1.) is the diagram for $ \bra{ c} \hat{H} \ket{Φ_i^a}$. The diagram for $ \bra{ Φ_i ^a} \hat{ H} \ket{ Φ_j^b}$ is nr.2, and lastly I have the Hartree-Fock diagram nr.3.}
+\label{fig:pdf_image_page1}
+
+\newpage
+\includepdf[pages=2]{Fys4480mid1.pdf} % Second page
+\captionof{figure}{Second page of Fys4480mid1.pdf.}
+\label{fig:pdf_image_page2}
 
 \end{document}
