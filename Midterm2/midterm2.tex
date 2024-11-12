@@ -1,0 +1,271 @@
+\documentclass[a4paper,12pt]{article}
+
+% Packages
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{bookmark}
+\usepackage{fancyhdr}
+\usepackage{physics}
+\usepackage{unicode-math}
+\usepackage{lmodern}
+\usepackage{pdfpages}
+\usepackage{simpler-wick}
+\usepackage{unicode-math}
+\usepackage{caption}
+
+% Page geometry
+\geometry{margin=1in}
+
+% Header and Footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{First midterm FYS4480}
+\fancyhead[R]{FYS4480}
+\fancyfoot[C]{\thepage}
+
+% Document information
+\title{Midterm 2}
+\author{Hishem Kløvnes}
+\date{\today}
+
+\begin{document}
+\maketitle
+\section{Quantum mechanics for many-particle systems}
+
+
+\subsection*{a)}
+For this exercise, we will use the commutation relations: 
+$$[A,BC] = [A,B]C + B[A,C]$$
+and
+$$[AB,CD] = A[B,C]D + AC[B,D] + [A,C]DB + C[A,D]B$$
+We want to show that $\hat{ H}_0$ and $ \hat{ V}$ commutes with $\hat{ S}_z$ and $\hat{ S}^2$.\\ The operators are defined as:
+$$\hat{ H}_0 =ξ  ∑_{ p σ }^{} (p-1)a_{p σ}^{†}a_{p σ}$$
+$$\hat{ V} = ∑_{pq}^{} a_{p-}^{†}a_{p+}^{†} a_{p-}a_{p+}$$
+$$\hat{ S}_z = ∑_{p σ }^{}σ a_{p σ}^{†}a_{p σ }$$
+$$\hat{ S}^2 = \hat{ S}_z^2 + \frac{1}{2}(\hat{ S}_+ \hat{ S}_- + \hat{ S}_- \hat{ S}_+)$$
+
+Where $\hat{ S}_\pm = ∑_{p}^{} a_{p ± }^{†} a_{∓ }$, $σ =±  1$ for spin and $p = 1,2, \ldots  $ is the index for the single-particle states.\\
+We start by showing that $\hat{ H}_0$ commutes with $\hat{ S}_z$:
+$$[\hat{ H}_0, \hat{ S}_z] = ξ  ∑_{ p σ }^{} (p-1)[a_{p σ}^{†}a_{p σ},∑_{τ}^{}τ  a_{q τ }^{†}a_{q τ}]$$
+Lets take the operators to the side and look at those first:
+$$[a_{p σ^{†} a_{p σ}}, a_{q τ }^{†} a_{q τ }]$$
+$$ = a_{p σ}^{†} [a_{p σ }, a _{q τ}^{†}] a_{q τ} 
++a_{p σ}^{†} a _{q τ}^{†}[a_{p σ }, a_{q τ}] 
++  [a_{p σ}^{†}, a _{q τ}^{†}] a_{p σ }a_{q τ}
++ a _{q τ}^{†} [a_{p σ}^{†}, a_{q τ}] a_{p σ }$$
+Two creation operators commute and two annihilation operators commute, so two of them er directly zero, while the other two leaves croenecker deltas\\
+$$ = a_{p σ}^{†} δ_{pq} δ_{στ} a_{q τ} -a_{q τ}^{†} δ_{pq} δ_{στ} a_{p σ}$$
+$$[\hat{ H}_0, \hat{ S}_z] = ξ  ∑_{ p σ }^{} (p-1)[a_{p σ}^{†}a_{p σ},∑_{τ}^{}τ  a_{q τ }^{†}a_{q τ}]$$
+$$ = ξ  ∑_{ p σ }^{} (p-1)∑_{τ}^{}τ( a_{p σ}^{†} δ_{pq}δ_{σ τ}a_{q τ} - a_{q τ}^{†} δ_{pq}δ_{σ τ}a_{p σ}) = 0$$
+
+Now we want to show that $\hat{ H}_0$ commutes with $\hat{ S}^2$.\\
+$$[\hat{ H}_0, \hat{ S}^2] = [H_0,S_z^2] + \frac{1}{2} ([H_0,S_+S_-] + [H_0,S_-S_+])$$
+We know that $[H_0,S_z] = 0$ and therefor the first term is zero.\\
+Lets look at the second term:
+$$[H_0,S_+S_-] = ξ  ∑_{ pq σ }^{} (p-1)[a_{p σ}^{†}a_{p σ},  a_{q + }^{†}a_{q -} a_{q-}^{†}a_{q+}]$$
+$$ = ξ  ∑_{ pq σ }^{} (p-1) \left( 
+[a_{p σ}^{†}a_{p σ},  a_{q + }^{†}a_{q -}]a_{q-}^{†}a_{q+}
++ 
+a_{q-}^{†}a_{q+}[a_{p σ}^{†}a_{p σ},  a_{q + }^{†}a_{q -}]
+\right)$$
+$$ = ξ  ∑_{ pq σ }^{} (p-1) \Big(
+    \left( a_{p σ}^{†} [a_{p σ}, a_{q + }^{†}] a_{q -} + a_{p σ}^{†} a_{q -} [a_{p σ}, a_{q + }^{†}] \right) a_{q-}^{†}a_{q+}$$
+$$+
+    a_{q+}^{†}a_{q-} \left( a_{p σ}^{†} [a_{p σ}, a_{q - }^{†}] a_{q +} + a_{p σ}^{†} a_{q +} [a_{p σ}, a_{q - }^{†}] \right)
+\Big)$$
+$$ = ξ  ∑_{ p σ }^{} (p-1) \Big( 
+    \left( a_{p+}^{†}a_{p-} - a_{p+}^{†}a_{p-} \right)a_{p-}^{†}a_{p+} + a_{p+}^{†}a_{p-}\left( a_{p-}^{†}a_{p+} - a_{p-}^{†}a_{p+} \right) 
+\Big) = 0$$
+The same goes for the last term, and therefor $[H_0,S^2] = 0$\\ 
+Now we can move over to check if $\hat{ V}$ commutes with $\hat{ S}_z$ and $\hat{ S}^2$. First we check if $\hat{ V}$ commutes with $\hat{ S}_z$:
+$$[\hat{ V}, \hat{ S}_z] = \frac{1}{4} g[∑_{pq}^{} a_{p-}^{†}a_{p+}^{†} a_{q-}a_{q+}, ∑_{r σ }^{}σ a_{r σ}^{†}a_{r σ }]$$
+$$ = \frac{1}{4} g ∑_{pqr} σ \Big( a_{p+}^{†} a_{p-}^{†}[a_{q-}a_{q+}, a_{r σ}^{†}a_{r σ}] + [a_{p+}^{†}a_{p-}^{†}, a_{r σ}^{†}a_{r σ}]a_{q-}a_{q+} \Big)$$
+The first term: 
+$$[a_{q-}a_{q+}, a_{r σ}^{†}a_{r σ}] = a_{q-}[a_q+,a_{r σ }^{†}]a_{r σ} + a_{q-}a_{r σ }^{†}[a_{q+},a_{r σ}]$$
+$$ +  [a_{q-},a_{r σ}^{†}]a_{r σ}a_{q+} + a_{r σ}^{†}[a_{q-},a_{r σ}]a_{q+}$$
+Where the only surviving therm, the ones with one creation and one annihilation operator, are:
+$$ = a_{q-}δ_{qr}δ_{σ+}a_{r σ} + a_{q+}δ_{qr}δ_{σ-}a_{r σ}$$
+$$ = a_{q-}a_{q +} + a_{q+}a_{q-}$$
+Now the second term:
+$$[a_{p+}^{†}a_{p-}^{†}, a_{r σ}^{†}a_{r σ}] = a_{p+}^{†}[a_{p-}^{†},a_{r σ}^{†}]a_{r σ} + a_{p+}^{†}a_{r σ}^{†}[a_{p-}^{†},a_{r σ}]$$
+$$ + [a_{p+}^{†},a_{r σ}^{†}]a_{r σ}a_{p-}^{†} + a_{r σ}^{†}[a_{p+}^{†},a_{r σ}]a_{p-}^{†}$$
+Where the only surviving therm, the ones with one creation and one annihilation operator, are:
+$$ = -a_{p+}^{†}δ_{pr}δ_{σ-}a_{r σ} - a_{p-}^{†}δ_{pr}δ_{σ+}a_{r σ}$$
+$$ = a_{p+}^{†}a_{p-} + a_{p-}^{†}a_{p+}$$
+Now we can put the two results back into the first expression, and we can see that it simply reduces to zero.
+$$ = \frac{1}{4} g ∑_{pq} σ \Big( a_{p+}^{†} a_{p-}^{†}(a_{q-}a_{q+} + a_{q-}a_{q+}) - a_{q-}a_{q+}(a_{p+}^{†}a_{p-}^{†} + a_{p+}^{†}a_{p-}^{†})  \Big)=0$$
+And now we can check if $\hat{ V}$ commutes with $\hat{ S}^2$:
+$$[\hat{V},\hat{S^2}] = [\hat{ V}, \hat{S_z^2}] + \frac{1}{2} \Big( [\hat{V}, \hat{S_+S_-}] + [\hat{V}, \hat{S_-S_+}] \Big)$$
+The first term is zero from the fact that $\hat{ V}$ commutes with $\hat{ S}_z$. The second term is:
+$$ [\hat{V},\hat{S_+}\hat{S_-}] = - \frac{1}{2}g ∑_{pq}^{} [a_{p+}^{†}a_{p-}^{†} a_{q-} a_{q+}, ∑_{r}^{} a_{r+}^{†}a_{r-}a_{r-}^{†} a_{r+} ]$$
+$$ = - \frac{1}{2}g ∑_{pqr}^{} \Big( a_{p+}^{†} a_{p-}^{†} [a_{q-}a_{q+},a_{r+}^{†}a_{r-}]a_{r-}^{†}a_{r+} 
+$$
+$$
++ a_{p+}^{†}a_{p-}^{†}a_{r+}^{†}a_{r-}[a_{q-}a_{q+},a_{r-}^{†}a_{r+}]
+$$
+$$
++ [a_{p+}^{†}a_{p-}^{†},a_{r+}^{†}a_{r-}]a_{r-}^{†}a_{r+}a_{q-}a_{q+}
+$$
+$$
++ a_{r+}^{†}a_{r-}[a_{p+}^{†}a_{p-}^{†},a_{r-}^{†}a_{r+}]a_{q-}a_{q+}
+\Big)$$
+I will seperate the commutations and look at them one by one. The first term:
+$$[a_{q-}a_{q+},a_{r+}^{†}a_{r-}] 
+= a_{q-}[a_{q+},a_{r+}^{†}]a_{r-} + a_{q-}a_{r+}^{†}[a_{q+},a_{r-}]
++ [a_{q-},a_{r+}^{†}]a_{r-}a_{q+} + a_{r-}[a_{q-},a_{r+}^{†}]a_{q+}$$
+$$
+= a_{q-}δ_{qr}δ_{++}a_{r-} + δ_{qr}δ_{+-}a_{r-}a_{q+} =a_{q-}a_{q-}   
+$$
+The second term:
+$$[a_{q-}a_{q+},a_{r-}^{†}a_{r+}]
+= a_{q-}[a_{q+},a_{r-}^{†}]a_{r+} + a_{q-}a_{r-}^{†}[a_{q+},a_{r-}]
++ [a_{q-},a_{r-}^{†}]a_{r+}a_{q+} + a_{r-}^{†}[a_{q-},a_{r+}]a_{q+}$$
+$$
+= a_{q-}δ_{qr}δ_{+-}a_{r+} + δ_{qr}δ_{+-}a_{r+}a_{q+} =a_{q+}a_{q+}
+$$
+The third term:
+$$[a_{p+}^{†}a_{p-}^{†},a_{r+}^{†}a_{r-}]
+= a_{p+}^{†}[a_{p-}^{†},a_{r+}^{†}]a_{r-} + a_{p+}^{†}a_{r+}^{†}[a_{p-}^{†},a_{r-}]
++ [a_{p+}^{†},a_{r+}^{†}]a_{r-}a_{p-}^{†} + a_{r+}^{†}[a_{p+}^{†},a_{r-}]a_{p-}^{†}$$
+$$
+= -a_{p+}^{†}a_{r+}^{†}δ_{pr}δ_{- -} - a_{r+}^{†}δ_{pr}δ_{+-}a_{p-}^{†} = -a_{p+}^{†}a_{p+}^{†}
+$$
+The fourth term:
+$$[a_{p+}^{†}a_{p-}^{†},a_{r-}^{†}a_{r+}]
+= a_{p+}^{†}[a_{p-}^{†},a_{r-}^{†}]a_{r+} + a_{p+}^{†}a_{r-}^{†}[a_{p-}^{†},a_{r+}]
++ [a_{p+}^{†},a_{r-}^{†}]a_{r+}a_{p-}^{†} + a_{r-}^{†}[a_{p+}^{†},a_{r+}]a_{p-}^{†}$$
+$$
+= -a_{p+}^{†}a_{r-}^{†}δ_{pr}δ_{- +} - a_{r-}^{†}δ_{pr}δ_{+ +}a_{p-}^{†} = -a_{p-}^{†}a_{p-}^{†}
+$$
+Now we can put the results back into the expression, and since $r$ is equal to either $p$ or $q$, we can adjust acording to this:
+$$ = - \frac{1}{2}g ∑_{pq}^{} \Big( a_{p+}^{†} a_{p-}^{†} a_{q-}a_{q-}  a_{q-}^{†}a_{q+} 
+$$
+$$
++ a_{p+}^{†}a_{p-}^{†}a_{q+}^{†}a_{q-}a_{q+}a_{q+}
+$$
+$$
+-a_{p+}^{†}a_{p+}^{†}a_{p-}^{†}a_{p+}a_{q-}a_{q+}
+$$
+$$
+- a_{p+}^{†}a_{p-}a_{p-}^{†}a_{p-}^{†}a_{q-}a_{q+}
+\Big)$$
+All of these terms are zero, because if we look closely, we can either see that each term is trying to annihilate the same state twice. For the seconf and third term this happens directly, while for the first and last term, this happens when trying to normal order the operators.\\
+The last term is the same as the second term, because of the commutation relations between $\hat{S}_+$ and $\hat{S}_-$, and therefor the result is zero.\\
+This means that $\hat{V}$ commutes with $\hat{S}^2$.\\
+We can now introduce the pair-creation and pair-annihilation operators:
+$$\hat{ P_p^+} = a_{p+}^{†} a_{p-}^{†}$$
+$$\hat{ P_p^-} = a_{p-} a_{p+}$$
+Lets re-introduce the $\hat{V}$ operator:
+$$\hat{ V} = -\frac{1}{2} g ∑_{pq}^{} a_{p+}^{†} a_{p-}^{†}a_{q-} a_{q+}$$
+From this we can easily see that we can write $\hat{V}$ as:
+$$\hat{ V} = -\frac{1}{2} g ∑_{pq}^{} \hat{P_p^+} \hat{P_q^-}$$
+And therefor we can write the $\hat{H}$, with $\xi=1$ as:
+$$\hat{ H} = \hat{H}_0 + \hat{V} = ∑_{ p σ }^{} (p-1)a_{p σ}^{†}a_{p σ} -\frac{1}{2} g ∑_{pq}^{} \hat{P_p^+} \hat{P_q^-}$$
+And laslty we want to show that the pair creation operators commutes among themselves:
+$$[\hat{P_p^+},\hat{P_q^+}] = [a_{p+}^{†} a_{p-}^{†}, a_{q+}^{†} a_{q-}^{†}]$$ 
+$$
+a_{p+}^{†} [a_{p-}^{†}, a_{q+}^{†}] a_{q-}^{†} + a_{p+}^{†} a_{q+}^{†} [a_{p-}^{†}, a_{q-}^{†}]
++ [a_{p+}^{†}, a_{q+}^{†}] a_{q-}^{†} a_{p-}^{†} + a_{q+}^{†} [a_{p+}^{†}, a_{q-}^{†}] a_{p-}^{†}
+$$
+All these terms are zero, because commuting two creation or annihilation operators will give zero.\\
+\subsection*{b)}
+For this part we want to construct the Hamiltonian matrix for a system with no broken pairs and total spin of $S=0$, for the case of the four lowest single-particle states.\\
+We can start by defining a state with total spin $S=0$:
+$$
+\ket{Φ_{α β}} = P_{α}^{+}P_{β}^{+} \ket{0}
+$$
+We will start by finding the expectation value of the one body term:
+$$
+\bra{Φ_{α β}} \hat{H}_0 \ket{Φ_{α β}} = \bra{Φ_{α β}} ∑_{p σ }^{} (p-1)a_{p σ}^{†}a_{p σ} \ket{Φ_{α β}}
+$$
+$$
+= ∑_{p σ }^{} (p-1) \bra{Φ_{α β}} a_{p σ}^{†}a_{p σ} \ket{Φ_{α β}}
+$$
+Here $σ = \pm 1$ and $p$ can have the values $p= {α,β}$, and therefor we can write the expression as:
+$$
+\bra{Φ_{α β}} \hat{H}_0 \ket{Φ_{α β}} = 2(α -1) + 2(β -1) = 2(α + β -2)
+$$
+For the interraction term $\hat{V}$, we will use the indexes $α,β,γ,δ$ to represent the four lowest single-particle states. We can write the expectation value as:
+$$
+\bra{Φ_{α β}} \hat{V} \ket{Φ_{α β}} = -\frac{1}{2} g \bra{Φ_{α β}} ∑_{pq}^{} \hat{P_p^+} \hat{P_q^-} \ket{Φ_{γ δ}}
+$$
+$$
+= -\frac{1}{2} g∑_{pq}^{∞}  \bra{ 0} P_β^- P_α^- P_p^+ P_q^- P_γ^+ P_δ^+  \ket{0}
+$$
+For this we will need to use contractions. 
+$$
+\wick{ \c2 P_β^- \c1 P_α^- \c1 P_p^+ \c1 P_q^- \c1 P_γ^+ \c2 P_δ^+  } = \delta_{βδ} \delta_{αp} \delta_{q γ} 
+$$
+$$
+\wick{ \c2 P_β^- \c1 P_α^- \c1 P_p^+ \c3 P_q^- \c2 P_γ^+ \c3 P_δ^+  } = \delta_{β γ} \delta_{αp} \delta_{q δ} 
+$$
+$$
+\wick{ \c1 P_β^- \c2 P_α^- \c1 P_p^+ \c1 P_q^- \c2 P_γ^+ \c1 P_δ^+  } = \delta_{βp} \delta_{αγ} \delta_{q δ} 
+$$
+$$
+\wick{ \c1 P_β^- \c2 P_α^- \c1 P_p^+ \c1 P_q^- \c1 P_γ^+ \c2 P_δ^+  } = \delta_{βp} \delta_{αδ} \delta_{q γ} 
+$$
+Usually, when we work with contraction, we will notice how many of the lines cross to determine if the term is negative or positive. One cross, and the term is negative, while two crosses and the term is positive.\\
+For these operators, each of them contain either two creation or two annihilation operators, and therefor the result will  always be positive.\\
+Now we can set up the matrices:
+$$
+\hat{H}_0 =
+\begin{bmatrix}
+    2 & 0 & 0 & 0 & 0 & 0 \\
+    0 & 4 & 0 & 0 & 0 & 0 \\
+    0 & 0 & 6 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 6 & 0 & 0 \\
+    0 & 0 & 0 & 0 & 8 & 0 \\
+    0 & 0 & 0 & 0 & 0 & 10 \\
+    \end{bmatrix}
+$$
+$$
+\hat{V} = -\frac{1}{2}g
+\begin{bmatrix}
+    2 & 1 & 1 & 1 & 1 & 0 \\
+    1 & 2 & 1 & 1 & 0 & 1 \\
+    1 & 1 & 2 & 0 & 1 & 1 \\
+    1 & 1 & 0 & 2 & 1 & 1 \\
+    1 & 0 & 1 & 1 & 2 & 1 \\
+    0 & 1 & 1 & 1 & 1 & 2 \\
+    \end{bmatrix}
+$$
+The total Hamiltonian matrix will be:
+$$
+\hat{H} = \hat{H}_0 + \hat{V} = 
+\begin{bmatrix}
+    2 - g & -\frac{1}{2}g & -\frac{1}{2}g & -\frac{1}{2}g & -\frac{1}{2}g & 0 \\
+    -\frac{1}{2}g & 4 - g & -\frac{1}{2}g & -\frac{1}{2}g & 0 & -\frac{1}{2}g \\
+    -\frac{1}{2}g & -\frac{1}{2}g & 6 - g & 0 & -\frac{1}{2}g & -\frac{1}{2}g \\
+    -\frac{1}{2}g & -\frac{1}{2}g & 0 & 6 - g & -\frac{1}{2}g & -\frac{1}{2}g \\
+    -\frac{1}{2}g & 0 & -\frac{1}{2}g & -\frac{1}{2}g & 8 - g & -\frac{1}{2}g \\
+    0 & -\frac{1}{2}g & -\frac{1}{2}g & -\frac{1}{2}g & -\frac{1}{2}g & 10 - g \\
+\end{bmatrix}
+$$
+The following plot and the matrix elements are calculated with the code in $ \verb|energies.py|$
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale = 0.5]{Figure_1.png}
+    \caption{The Hamiltonian matrix for a system with no broken pairs and total spin of $S=0$, for the case of the four lowest single-particle states. Energies as a function of the strength of the interaction $g$.The dashed lines is to show the degeneracy of the states.}
+\end{figure}
+
+\subsection*{c)}
+
+
+\subsection*{d)}
+
+
+\subsection*{e)}
+
+
+\subsection*{f)}
+
+
+\subsection*{g)}
+
+
+\end{document}

@@ -11,7 +11,6 @@ class HartreeFock:
         self.levels = np.arange(1, 4).repeat(2)
         self.spins = np.array([0, 1] * 3)
         self.electrons = np.vstack([self.levels, self.spins]).T
-        self.h = np.diag(-(Z_val**2) / (2 * self.levels**2))
         self.values = self.prepare_values()
         self.coulomb_integrals = self.setup_coulomb()
 
