@@ -251,11 +251,48 @@ The following plot and the matrix elements are calculated with the code in $ \ve
     \centering
     \includegraphics[scale = 0.5]{Figure_1.png}
     \caption{The Hamiltonian matrix for a system with no broken pairs and total spin of $S=0$, for the case of the four lowest single-particle states. Energies as a function of the strength of the interaction $g$.The dashed lines is to show the degeneracy of the states.}
+    \label{fig:fig1}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale = 0.5]{Figure_2.png}
+    \caption{Ground state energy as a function of the interraction strength $g$.}
+    \label{fig:fig2}
 \end{figure}
 
 \subsection*{c)}
-
-
+In \ref{fig:fig1} the energy levels i show are from states $\ket{Φ_0}$ to $\ket{Φ_5}$, more explicitly:
+$$
+\ket{Φ_0} = P_1^+P_2^+ \ket{0}
+\ket{Φ_1} = P_1^+P_3^+ \ket{0}
+\ket{Φ_2} = P_1^+P_4^+ \ket{0}
+$$
+$$
+\ket{Φ_3} = P_2^+P_3^+ \ket{0}
+\ket{Φ_4} = P_2^+P_4^+ \ket{0}
+\ket{Φ_5} = P_3^+P_4^+ \ket{0}
+$$
+For this part we want to make an approximation to the ground state energy. For this we will use at most two-particle two-holes excitations. Hence we will approximate the ground state energy by only using the states $\ket{Φ_0}$ and $\ket{Φ_4}$.\\
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale = 0.5]{Figure_3.png}
+    \caption{Excluding $ \ket{Φ_5}$. The Hamiltonian matrix for a system with no broken pairs and total spin of $S=0$, for the case of the four lowest single-particle states. Energies as a function of the strength of the interaction $g$}
+    \label{fig:fig3}
+\end{figure}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale = 0.5]{Figure_4.png}
+    \caption{Ground state energy approximation as a function of the interraction strength $g$.}
+    \label{fig:fig4}
+\end{figure}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale = 0.5]{Figure_5.png}
+    \caption{Difference between the ground state energy and the approximation as a function of the interraction strength $g$.}
+    \label{fig:fig5}
+\end{figure}
+In \ref{fig:fig5} we show the energy difference between the approximation and the ground state energy. We can see that the approximation is very close to the ground state energy as the difference is very small. We can see that the energy difference is negative, meaning the approximated ground state has slightly higher energy than the true ground state energy.\\
+TODO: add diagrammatic representation
 \subsection*{d)}
 
 

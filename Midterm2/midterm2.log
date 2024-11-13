@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024/Arch Linux) (preloaded format=xelatex 2024.11.10)  12 NOV 2024 17:08
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024/Arch Linux) (preloaded format=xelatex 2024.11.10)  13 NOV 2024 15:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -957,6 +957,37 @@ Overfull \hbox (9.5599pt too wide) in paragraph at lines 252--253
  [][] 
  []
 
+File: Figure_2.png Graphic file (type bmp)
+<Figure_2.png>
+
+Overfull \hbox (9.5599pt too wide) in paragraph at lines 258--259
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: Figure_3.png Graphic file (type bmp)
+<Figure_3.png>
+
+Overfull \hbox (9.5599pt too wide) in paragraph at lines 278--279
+ [][] 
+ []
+
+File: Figure_4.png Graphic file (type bmp)
+<Figure_4.png>
+
+Overfull \hbox (9.5599pt too wide) in paragraph at lines 284--285
+ [][] 
+ []
+
+File: Figure_5.png Graphic file (type bmp)
+<Figure_5.png>
+
+Overfull \hbox (9.5599pt too wide) in paragraph at lines 290--291
+ [][] 
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -964,19 +995,45 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[6] (./midterm2.aux)
+[6]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[7]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[8] (./midterm2.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 30297 strings out of 476182
- 588843 string characters out of 5789077
+ 30338 strings out of 476182
+ 589517 string characters out of 5789077
  1963839 words of memory out of 5000000
- 51908 multiletter control sequences out of 15000+600000
+ 51945 multiletter control sequences out of 15000+600000
  564474 words of font info for 84 fonts, out of 8000000 for 9000
  350 hyphenation exceptions out of 8191
  99i,12n,114p,603b,580s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on midterm2.pdf (6 pages).
+Output written on midterm2.pdf (8 pages).

@@ -50,27 +50,35 @@ class manybodies:
         if len(state1) != 4 or len(state2) != 4:
             raise ValueError('State must have 4 particles')
         #find max energy level
-        maximum = max(state1[0].level,state1[2].level,state2[0].level,state2[2].level)
+       
+
         alpha = state1[0].level
         beta = state1[2].level
         gamma = state2[0].level
         delta = state2[2].level
         E = 0
+        maximum = max(alpha,beta,gamma,delta)
+
         for p in range(1,maximum+1):
             for q in range(1,maximum+1):
                 
                 if beta == delta and alpha == p and q == gamma:
+                    print("bra{",alpha,beta,"}","ket{",gamma,delta,"}")
                     E += 1
                     # return +1
                 if beta == gamma and alpha == p and delta == q:
+                    print("bra{",alpha,beta,"}","ket{",gamma,delta,"}")
                     E += 1
                     # return -1
                 if beta == p and alpha == delta and gamma == q:
+                    print("bra{",alpha,beta,"}","ket{",gamma,delta,"}")
                     E += 1
                     # return -1
                 if beta == p and alpha == gamma and delta == q:
+                    print("bra{",alpha,beta,"}","ket{",gamma,delta,"}")
                     E += 1
                     # return +1
+                
         return E*g
 
     
@@ -97,22 +105,22 @@ class manybodies:
             state[i] = [p1,p2,p3,p4]
         return state
     
-    def create_set_of_states(self,Maxmimum_energy:int):
+    def create_set_of_states(self,MaxEP1:int,MaxEp2:int):
         #create a set of states
         #2 and 2 levels up to maxmum energy
         #2 levels cannot be the same in the same state
         #maybe set j in range (i+1,Maxmimum_energy+1)
         states = {}
-        for i in range(1,Maxmimum_energy+1):
-            for j in range(i+1,Maxmimum_energy+1):
+        for i in range(1,MaxEP1+1):
+            for j in range(i+1,MaxEp2+1):
                 if i != j:
                     states[i,j ] = self.create_state(np.array([i,j]))
         return states
     
 
-    def Hamiltonian(self,max_energy,g):
-        states1 = self.create_set_of_states(max_energy)
-        states2 = self.create_set_of_states(max_energy)
+    def Hamiltonian(self,MaxEp1:int,MaxEp2:int,g:np.ndarray):
+        states1 = self.create_set_of_states(MaxEp1,MaxEp2)
+        states2 = self.create_set_of_states(MaxEp1,MaxEp2)
 
         H0 = np.eye(len(states1))
         for i,s in enumerate(states1):
@@ -139,25 +147,48 @@ if __name__ == "__main__":
     state = system.create_state(levels)
     energy = system.single_particle_energy(state)
 
-    print("Energy: ",energy)
     n = 101
-    energies = np.zeros((n, 6))
+    energies = np.zeros((n, 5))
     g_values = np.linspace(-1, 1, n)
     for i, g in enumerate(g_values):
-        H = system.Hamiltonian(4,g)
+        H = system.Hamiltonian(2,4,g)
         energies[i] = np.linalg.eigvalsh(H)
     
-    for i in range(6):
-        if i == 3:
-            linestyle = "dotted"
-            color = "magenta"
-        else:
-            linestyle = "-"
-            color = None
-        plt.plot(g_values, energies[:, i], label=f"State {i}", linestyle=linestyle, color=color, linewidth=4)
+    energies2 = np.zeros((n, 6))
+    for i, g in enumerate(g_values):
+        H = system.Hamiltonian(3,4,g)
+        energies2[i] = np.linalg.eigvalsh(H)
     
+
+    deltaE0 = energies2[:, 0] - energies[:, 0]
+    plt.plot(g_values, deltaE0, label="Ground state", linestyle="-", color="blue", linewidth=2)
     plt.xlabel("g")
-    plt.ylabel("Energy")
-    plt.title("Energy levels as a function of g")
+    plt.ylabel("Δ E")
+    plt.title("Ground state energy difference as a function of g")
     plt.legend()
     plt.show()
+
+
+    # for i in range(5
+    #                ):
+    #     if i == 3:
+    #         linestyle = "dotted"
+    #         color = "magenta"
+    #     else:
+    #         linestyle = "-"
+    #         color = None
+    #     plt.plot(g_values, energies[:, i], label=f"State {i}", linestyle=linestyle, color=color, linewidth=4)
+    
+    # plt.xlabel("g")
+    # plt.ylabel("Energy")
+    # plt.title("Energy levels as a function of g")
+    # plt.legend()
+    # plt.show()
+
+    
+    # plt.plot(g_values, energies[:,0], label="Ground state", linestyle="-", color="blue", linewidth=2)
+    # plt.xlabel("g")
+    # plt.ylabel("Energy")
+    # plt.title("Ground state energy as a function of g")
+    # plt.legend()
+    # plt.show()
