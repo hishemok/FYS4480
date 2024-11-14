@@ -295,8 +295,75 @@ In \ref{fig:fig5} we show the energy difference between the approximation and th
 TODO: add diagrammatic representation
 \subsection*{d)}
 
+The one-body operator $\hat{H}_0$ can be typically be expressed in terms of matrix elements $ \bra{ p} \hat{h}_0 \ket{q}$ as:
+$$\hat{H}_0 = ∑_{pq}^{} \bra{p} \hat{h}_0 \ket{q}a_p ^{†} a_q$$
+When normal ordering, we can adjust the term to:
+$$a_p ^{†} a_q = \{a_p ^{†} a_q\} + δ_{pq ∈ i}$$
+And from this we can write the one-body term as:
+$$\hat{H}_0 = ∑_{pq}^{} \bra{p} \hat{h}_0 \ket{q}\{a_p ^{†} a_q\} + ∑_{pq}^{} \bra{p} \hat{h}_0 \ket{q} δ_{pq ∈ i}$$
+Where the second term is a constant that represents the expectation value of the one-body operator in the refrence state:
+$$∑_{pq}^{} \bra{p} \hat{h}_0 \ket{q} δ_{pq ∈ i} = \bra{Φ_0} \hat{H}_0 \ket{Φ_0} $$
+From this we get 
+$$\hat{H}_0 = ∑_{pq}^{} \bra{p} \hat{h}_0 \ket{q}\{a_p ^{†} a_q\} + \bra{Φ_0} \hat{H}_0 \ket{Φ_0}$$
+Now applying the spesific case where $ \bra{ p} \hat{h}_0 \ket{ q} = (p-1) δ_{pq}$ and find that
+$$\hat{H}_0 = ∑_{p σ}^{} (p-1) \{a_p ^{†} a_q\} + \bra{Φ_0} \hat{H}_0 \ket{Φ_0}$$
+For the interraction term we will approach the normal ordering in a similar way. We can write the interraction term as:
 
-\subsection*{e)}
+$$ \hat{ H}_I = \frac{1}{4} ∑_{pqrs}^{} \bra{pq} \hat{ v} \ket{ rs}a_p ^{†} a_q ^{†} a_s a_r$$
+where we can re-write the creation and annihilation operators as:
+$$a_p ^{†} a_q ^{†} a_s a_r = \{a_p ^{†} a_q ^{†} a_s a_r\} + \wick{a_p ^{†} \c1a_q^{†} \c1a_s a_r} $$
+$$ 
++ \wick{a_p ^{†} \c1a_q ^{†} a_s \c1a_r} + \wick{\c1a_p ^{†} a_q ^{†} \c1a_s a_r} + \wick{\c1a_p ^{†} a_q ^{†} a_s \c1a_r} + \wick{\c2a_p ^{†} \c1a_q ^{†} \c1a_s \c2a_r}
++ \wick{\c2a_p ^{†} \c1a_q ^{†} \c2a_s \c1 a_r}
+$$
+
+For this spesific case we will substitute $ \frac{1}{4} \bra{ pq} \hat{v}\ket{ rs}$ with $-\frac{g}{2}δ_{pq} δ_{rs} $. The interraction term can now be seperated into three parts:
+\begin{itemize}
+\item 1. The two body term, which arrises from the normal ordering of the creation and annihilation operators.
+\item 2. The one body term, which comes from the single contractions. 
+\item 3. The constant term, which comes from the double contractions.
+\end{itemize}
+From this we can construct a new normal ordered interraction term:
+$$\hat{H}_I = -\frac{g}{2} ∑_{pq}^{} \{a_p ^{†} a_q ^{†} a_q a_p\} -\frac{g}{2} ∑_{pq}^{} a_{p σ}^{†}a_{p σ} + -\frac{g}{2} (δ_{pr}δ_{qs} + δ_{ps}δ_{qr}) $$ 
+
+We can combine the one-body term into the first one we found, and we get:
+$$
+\hat{H}_0^N = ∑_{p σ}^{} (p-1)\{ a_{p σ}^{†} a_{p σ} \} -\frac{g}{2} ∑_{pq}^{} a_{p σ}^{†}a_{p σ}
+$$
+The normal ordered interraction term is:
+$$  
+\hat{V}^N = -\frac{g}{2} ∑_{pq}^{} \{a_p ^{†} a_q ^{†} a_q a_p\}
+$$
+and the refrence energy:
+$$
+E_0^{ref} = \bra{Φ_0} \hat{H}_0 \ket{Φ_0} -\frac{g}{2} ∑_{pq}^{} (δ_{pr}δ_{qs} + δ_{ps}δ_{qr}) = 2 - g
+$$
+where the values were obtained in the previous task.\\
+The total normal ordered Hamiltonian is:
+$$
+\hat{H}^N = \hat{H}_0^N + \hat{V}^N + E_0^{ref}
+$$
+We now want to set up the standard Hartree Fock equations for the system, also known as the canonical Hartree-Fock equations. We begin by defining the single-particle operator $ \hat{ f}$, which for a general case is given by:
+$$
+\bra{ p} \hat{f} \ket{ q} = \bra{ p } \hat{H}_0 \ket{ q} + ∑_{j}^{} \bra{pj} \hat{ V} \ket{ qj}_{AS}
+$$
+where the subscript $AS$ indicates that the matrix elements are antisymmetrized. Due to the nature of the Hamiltionian, we have $ \bra{ p} \hat{ f} \ket{ q} = 0$ for $ p \neq q$. In second quantization we can write the single-particle operator as:
+$$
+\hat{ F}  = ∑_{ pq}^{ } \bra{ p} \hat{ f} \ket{ q}a_p ^{†} a_q = ∑_{p}^{} \bra{ p} \hat{ f} \ket{ p}a_p ^{†} a_p
+$$
+In writin the operator in normal order, we have:
+$$
+\wick{ \c1a_p ^{†} \c1a_p} = \{a_p ^{†} a_p\} + δ_{pp} 
+$$
+and thus:
+$$
+\hat{ F} = ∑_{p}^{} \bra{ p} \hat{ f} \ket{ p} \{a_p ^{†} a_p\} + ∑_{p}^{} \bra{ p} \hat{ f} \ket{ p} 
+$$
+The canonical Hartree-Fock equations are given by:
+$$
+\hat{ f} \ket{ p} = \epsilon_p \ket{ p}
+$$
+where $ \epsilon_p$ is the single-particle energy.
 
 
 \subsection*{f)}
