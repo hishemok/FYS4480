@@ -135,9 +135,23 @@ class manybodies:
         print(V)
         H = H0 - (g/2 * V)
         return H
+    
+    def crondelta(self,a,b):
+        if a == b:
+            return 1
+        return 0
+    
+    def HF(self,dims,g):
+        hmat = np.zeros((dims,dims))
+        alpha = np.arange(1,dims,1)
+        hmat[0,0] = 2 - g
+        for a in alpha:
+            hmat[a,a] = ( (2 - g) + sum((p) * self.crondelta(a,p) for p in [0,1])
+                            + sum((p) * self.crondelta(a,p) for p in [2,3]) 
+                                + 0.5 * g * sum(1 * self.crondelta(a,p) for p in [0,1]) )
      
 
-        
+        return hmat
 
 
 if __name__ == "__main__":
@@ -186,9 +200,30 @@ if __name__ == "__main__":
     # plt.show()
 
     
-    # plt.plot(g_values, energies[:,0], label="Ground state", linestyle="-", color="blue", linewidth=2)
-    # plt.xlabel("g")
-    # plt.ylabel("Energy")
-    # plt.title("Ground state energy as a function of g")
-    # plt.legend()
-    # plt.show()
+    plt.plot(g_values, energies[:,0], label="Ground state", linestyle="-", color="blue", linewidth=2)
+    plt.xlabel("g")
+    plt.ylabel("Energy")
+    plt.title("Ground state energy as a function of g")
+    plt.legend()
+    plt.show()
+
+    exact = energies[:, 0]
+    approx = energies2[:, 0]
+    hfE = np.zeros((n,4))
+    #hfEnergies = np.zeros((n,4))
+    for i, g in enumerate(g_values):
+        mat = system.HF(4,g)
+        print(mat)
+        hfE[i] = np.linalg.eigvalsh(mat)
+
+    hf = hfE[:,0]
+
+    plt.plot(g_values, exact, label="Exact", linestyle="-", color="blue", linewidth=2)
+    plt.plot(g_values, approx, label="Approx", linestyle="dashed", color="red", linewidth=2)
+    plt.plot(g_values, hf, label="HF", linestyle="dashdot", color="green", linewidth=2)
+    plt.xlabel("g")
+    plt.grid()
+    plt.legend()
+    plt.ylabel("Energy")
+    plt.title("Ground state energy as a function of g")
+    plt.show()

@@ -328,7 +328,7 @@ $$\hat{H}_I = -\frac{g}{2} ∑_{pq}^{} \{a_p ^{†} a_q ^{†} a_q a_p\} -\frac{
 
 We can combine the one-body term into the first one we found, and we get:
 $$
-\hat{H}_0^N = ∑_{p σ}^{} (p-1)\{ a_{p σ}^{†} a_{p σ} \} -\frac{g}{2} ∑_{pq}^{} a_{p σ}^{†}a_{p σ}
+\hat{H}_0^N = ∑_{p σ}^{} (p-1)\{ a_{p σ}^{†} a_{p σ} \} -\frac{g}{2} ∑_{p σ}^{} a_{p σ}^{†}a_{p σ}
 $$
 The normal ordered interraction term is:
 $$  
@@ -343,28 +343,153 @@ The total normal ordered Hamiltonian is:
 $$
 \hat{H}^N = \hat{H}_0^N + \hat{V}^N + E_0^{ref}
 $$
-We now want to set up the standard Hartree Fock equations for the system, also known as the canonical Hartree-Fock equations. We begin by defining the single-particle operator $ \hat{ f}$, which for a general case is given by:
+We now want to set up the standard Hartree-Fock equations for the system, also known as the canonical Hartree-Fock equations equations. We begin by defining the single-particle operator $ \hat{ f}$, which for a general case is given by:
 $$
-\bra{ p} \hat{f} \ket{ q} = \bra{ p } \hat{H}_0 \ket{ q} + ∑_{j}^{} \bra{pj} \hat{ V} \ket{ qj}_{AS}
+ \bra{ p} \hat{ f} \ket{ q } = \bra{ p } \hat{H}_0 \ket{ q} + ∑_{j}^{} \bra{pj} \hat{ V} \ket{ qj}_{AS}
 $$
-where the subscript $AS$ indicates that the matrix elements are antisymmetrized. Due to the nature of the Hamiltionian, we have $ \bra{ p} \hat{ f} \ket{ q} = 0$ for $ p \neq q$. In second quantization we can write the single-particle operator as:
+where the subscript $AS$ indicates thath the matrix elements are antisymmetrized:
 $$
-\hat{ F}  = ∑_{ pq}^{ } \bra{ p} \hat{ f} \ket{ q}a_p ^{†} a_q = ∑_{p}^{} \bra{ p} \hat{ f} \ket{ p}a_p ^{†} a_p
+\bra{pj} \hat{ V} \ket{ qj}_{AS} = \bra{pj} \hat{ V} \ket{ qj} - \bra{pj} \hat{ V} \ket{ jq}
 $$
-In writin the operator in normal order, we have:
+Since $ \bra{ p } \hat{ f} \ket{ q} = 0$ for $p \neq q$ due to the orthaogonality of the Hartree-Fock orbitals, we are left with only diagonal contributions, $p = q$.\\
+In second quantization, we can write the single-particle operator as:
 $$
-\wick{ \c1a_p ^{†} \c1a_p} = \{a_p ^{†} a_p\} + δ_{pp} 
+\hat{ F} = ∑_{pq}^{} \bra{ p }\hat{ f} \ket{ q} a_p ^{†} a_q = ∑_{p}^{} \bra{ p} \hat{ f} \ket{ p} a_p ^{†} a_p
 $$
-and thus:
+To express the normal-ordered form, we write:
 $$
-\hat{ F} = ∑_{p}^{} \bra{ p} \hat{ f} \ket{ p} \{a_p ^{†} a_p\} + ∑_{p}^{} \bra{ p} \hat{ f} \ket{ p} 
+\wick{ \c1 a_p ^{†} \c1 a_p} = \{a_p ^{†} a_p\} + δ_{pp}
 $$
-The canonical Hartree-Fock equations are given by:
+Which leads to:
 $$
-\hat{ f} \ket{ p} = \epsilon_p \ket{ p}
+\hat{ F} = ∑_{p}^{} \bra{ p} \hat{ f} \ket{ p} \{a_p ^{†} a_p\} + ∑_{p}^{} \bra{ p} \hat{ f} \ket{ p} δ_{pp}
 $$
-where $ \epsilon_p$ is the single-particle energy.
+Finally, the canonical Hartree-Fock equations are:
+$$
+\hat{ f} \ket{ p} = ϵ_p \ket{p }
+$$
+where the single-particle energies $ ϵ_p$ is the single-particle energy, and $ \ket{ p}$ ar the Hartree-Fock orbitals. these equations represent an eigenvalue problem, where the Fock operator $ \hat{ f}$ contains both the one-body contributions and the two-body contributions.\\
 
+
+\subsection*{e)}
+In the previous exam we showed that the HF equations can be written as:
+$$
+∑_{γ}^{} h_{α γ}^{HF}C_{pγ } = ϵ_p C_{pα}
+$$
+where
+$$
+h_{α γ}^{HF} = \bra{ α} h \ket{ γ} + ∑_{q}^{} ∑_{β δ}^{}  C_{q β}^* C_{q δ}\bra{α β}V \ket{γ δ}_{AS} 
+$$
+To find the HF equations for the spesific case, we do an operator basis transformation:
+$$  
+a_{p σ}^{†}  = ∑_{λ }^{} C_{pλ} a_{λ σ}^{†}$$
+$$
+a_{p σ}  = ∑_{λ }^{} C_{pλ}^{*} a_{λ σ}
+$$
+This transformation expresses the operators in terms of the new basis $\ket{ψ_p}$, where $p=1,2,3,4$.\\
+The HF Hamiltonian can be written in terms of creation and annihilation operators as:
+\begin{itemize}
+    \item 1. The one-body term:
+    $$∑_{p=1 }^{2} ∑_{σ}^{}  (p-1) a_p^{†}a_p - ∑_{p=3}^{4} ∑_{σ}^{} (p-1)a_p a_p^{†}   $$
+    \item 2. The two-body term:
+    $$ \frac{1}{ 2} ∑_{p=1}^{2} ∑_{σ}^{} a_p a_p^{†}$$
+  
+\end{itemize}
+Now we can substitute to the new basis
+\begin{itemize}
+    \item Term 1:
+    $$∑_{p=1 }^{2} ∑_{σ}^{}  (p-1) a_p^{†}a_p ⇒ ∑_{p=1 }^{2} ∑_{σ}^{}  (p-1) ∑_{λ λ'}^{} C_{pλ} C_{pλ'}^{*} a_{λ σ}^{†}a_{λ' σ}    $$
+    \item Term 2:
+    $$ ∑_{p=3}^{4} ∑_{σ}^{} (p-1)a_p a_p^{†} ⇒  ∑_{p=3}^{4} ∑_{σ}^{} (p-1) ∑_{λ λ'}^{} C_{pλ}^{*} C_{pλ'} a_{λ σ}a_{λ' σ}^{†} $$
+    \item Term 3:
+     $$ \frac{1}{ 2} ∑_{p=1}^{2} ∑_{σ}^{} a_p a_p^{†} ⇒ \frac{1}{ 2} ∑_{p=1}^{2} ∑_{σ}^{} ∑_{λ λ'}^{} C_{pλ}^{*}  C_{pλ'}a_{λ σ}a_{λ' σ}^{†}$$
+\end{itemize}
+Now, we would like to find the matrix elements of the transformed Hamiltonian. Which means calculating $ \bra{ aplha } \hat{h}^{HF}  \ket{β}$, where $\ket{ α} = a_{α σ}^{†}\ket{0}$.
+
+TWe will now apply wicks theorem term by term.: 
+\begin{itemize}
+    \item (1)
+    $$
+    C_{pλ}^{*}C_{pλ'} \left(
+        \wick{\c1a_{α σ_1} \c2a_{λ σ} \c1a_{λ'σ}^{†} \c2a_{β σ_2}^{†}}
+        + \wick{\c1a_{α σ_1} \c2a_{λ σ} \c2a_{λ'σ}^{†} \c1a_{β σ_2}^{†}}
+    \right) 
+    $$
+    $$
+    = C_{pλ}^{*}C_{pλ'} \left( δ_{σ_1 σ_2}δ_{αβ}δ_{λλ'}δ_{σ σ} - δ_{σ_1 σ}δ_{αλ}δ_{βλ'}δ_{σ σ_2} \right)
+    $$
+    \item (2)
+    $$
+    C_{pλ}C_{pλ'}^{*} \left(
+        \wick{\c1 a_{α σ_1} \c1 a_{λ σ}^{†} \c1 a_{λ'σ} \c1 a_{β σ_2}^{†}}
+    \right) = C_{pλ}C_{pλ'}^{*} δ_{ α λ} δ_{β λ'} δ_{σ σ_1} δ_{σ σ_2}
+    $$
+    \item (3)
+    $$
+    C_{pλ}^{*}C_{pλ'} \left(
+        \wick{\c1 a_{α σ_1} \c2 a_{λ σ} \c1 a_{λ'σ}^{†} \c2 a_{β σ_2}^{†}}
+        + \wick{\c1 a_{α σ_1} \c2 a_{λ σ} \c2 a_{λ'σ}^{†} \c1 a_{β σ_2}^{†}}
+    \right) 
+    $$
+    $$
+    = C_{pλ}^{*}C_{pλ'} \left( δ_{σ_1 σ_2}δ_{αβ}δ_{λλ'}δ_{σ σ} - δ_{σ_1 σ}δ_{αλ}δ_{βλ'}δ_{σ σ_2} \right)
+    $$
+  
+\end{itemize}
+
+
+Combining all the terms and simplifying symmations, the matrix elements $\bra{ α } \hat{h}_{HF} \ket{β}$ are:
+$$
+\bra{ α} \hat{ h}_{HF} \ket{ β} = (2-g)δ_{αβ}  -2 δ_{σ_1 σ_2} δ_{αβ} ∑_{p=1}^{2} ∑_{λ}^{} (p-1)|C_{pλ}|^2 
+$$
+$$
++ δ_{σ_1 σ_2} ∑_{p=1}^{2} (p-1)C_{pα}^{*} C_{pβ} + ∑_{p=3}^{4} (p-1)C_{pβ}^{*} C_{pα}
+$$
+$$
++ \frac{g}{2} \left[ 2δ_{σ_1σ_2}δ_{αβ} ∑_{p=1}^{2} ∑_{λ}^{} |C_{p λ}|^{2} - δ_{σ_1 σ_2}∑_{p=1}^{2} C_{p β}C_{p α}^{*}    \right]
+$$
+
+TODO: make this expression more readable
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale = 0.5]{Figure_6.png}
+    \caption{Comparison of HF, exact solution and the approximation.
+    Energies as a function of the strength of the interaction $g$}
+    \label{fig:fig6}
+\end{figure}
+In figure \ref{fig:fig6} we can see the comparison of the HF, exact solution and the earlier approximation. We can see that the HF solution is very close to the exact solution for $g$ close to zero. As $|g|\rightarrow 1$ the HF solution diverges from the exact solution. \\ \\
+To study the perturbation system, we use none-degenerate RS perturbation theory up to third order in the interaction, excluding the first-order term. The relevant states are:
+$$
+\ket{1+1-}, \ket{2+2-}, \ket{3+3-}, \ket{4+4-}
+$$
+defined as:
+$$
+\ket{p+p -} = a_{p+}^{†} a_{p-}^{†} \ket{0}
+$$
+From Figure 2 in the exercise description, which displays all possible antisymmetric Goldstone diagrams to third order, we determine which diagrams contribute to the GS energy. The Hamiltonian conserves particle and hole pairs, meaning diagrams in which pairs are broken do not contribute. This leaves us with four contributing diagrams, the ones labeled 1,4,5 and 8.\\
+For each diagram we count the number of hole states (h), loops (l) and the pair states (p). Diagram 1 has $(h,l,p) =(2,2,2)$, diagram 4 has $(h,l,p) =(2,2,3)$, diagram 5 has $(h,l,p) =(4,2,3)$ and diagram 8 has $(h,l,p) =(4,3,1)$.\\
+
+\begin{itemize}
+    \item Diagram 1: $(h=2,p=2,l=2)$:
+    $$
+    Δ E_1 = ∑_{i=1}^{2} ∑_{a=3}^{4} \frac{ \bra{ i_{+}i_{-}} \hat{ V} \ket{a_{+}a_{-}} \bra{a_{+}a_{-}} \hat{V} \ket{i_{+}i_{-}}}{2ϵ_i - 2ϵ_a}
+    $$
+    \item Diagram 4: $(h=2,p=3,l=2)$:
+    $$
+    Δ E_4 = ∑_{i=1}^{2} ∑_{a=3}^{4} ∑_{b=3}^{4} \frac{ \bra{ i_{+}i_{-}} \hat{ V} \ket{a_{+}a_{-}} \bra{a_{+}a_{-}} \hat{V} \ket{b_{+}b_{-}} \bra{b_{+}b_{-}}\hat{V} \ket{i_{+}i_{-}} }{(2ϵ_i - 2ϵ_a)(2ϵ_i - 2ϵ_b)}
+    $$
+    \item Diagram 5: $(h=4,p=3,l=2)$:
+    $$
+    Δ E_5 = ∑_{i=1}^{2} ∑_{a=3}^{4} ∑_{k=1}^{2} \frac{ \bra{ i_{+}i_{-}} \hat{ V} \ket{a_{+}a_{-}} \bra{k_{+}k_{-}} \hat{V} \ket{i_{+}i_{-}} \bra{a_{+}a_{-}}\hat{V} \ket{k_{+}k_{-}} }{(2ϵ_i - 2ϵ_a)(2ϵ_k - 2ϵ_a)}
+    $$
+    \item Diagram 8: $(h=4,p=1,l=3)$:
+    $$
+    ΔE_8 = ∑_{i=1}^{2} ∑_{a=3}^{4}  \frac{ \bra{ i_{+}i_{-}} \hat{ V} \ket{a_{+}a_{-}} \bra{i_{+}i_{-}} \hat{V} \ket{i_{+}i_{-}} \bra{a_{+}a_{-}}\hat{V} \ket{i_{+}i_{-}}}{(2ϵ_i - 2ϵ_a)^{2}} 
+    $$
+  
+\end{itemize}
+Where the sums over equivalent spins are implied, so we could simplify the expressions by removing pre-factors of $2^{-p}$.
 
 \subsection*{f)}
 
