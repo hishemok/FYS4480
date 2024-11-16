@@ -63,19 +63,19 @@ class manybodies:
             for q in range(1,maximum+1):
                 
                 if beta == delta and alpha == p and q == gamma:
-                    print("bra{",alpha,beta,"}","ket{",gamma,delta,"}")
+                    
                     E += 1
                     # return +1
                 if beta == gamma and alpha == p and delta == q:
-                    print("bra{",alpha,beta,"}","ket{",gamma,delta,"}")
+                    
                     E += 1
                     # return -1
                 if beta == p and alpha == delta and gamma == q:
-                    print("bra{",alpha,beta,"}","ket{",gamma,delta,"}")
+                    
                     E += 1
                     # return -1
                 if beta == p and alpha == gamma and delta == q:
-                    print("bra{",alpha,beta,"}","ket{",gamma,delta,"}")
+                    
                     E += 1
                     # return +1
                 
@@ -131,9 +131,9 @@ class manybodies:
             for j,s2 in enumerate(states2):
                 e = system.interraction_energy(states1[s1],states2[s2],1)
                 V[i,j] = e
-        print(H0)
-        print(V)
-        H = H0 - (g/2 * V)
+        self.H0 = H0
+        self.V = V
+        H = self.H0 - (g/2 * self.V)
         return H
     
     def crondelta(self,a,b):
@@ -152,6 +152,15 @@ class manybodies:
      
 
         return hmat
+    
+    def MBPT3rd(self, g):
+        return 2-g -7/24*g**2 -1/12*g**3
+    def MBPT2rd(self, g):
+        return 2-g -7/24*g**2 
+
+    
+
+
 
 
 if __name__ == "__main__":
@@ -213,7 +222,7 @@ if __name__ == "__main__":
     #hfEnergies = np.zeros((n,4))
     for i, g in enumerate(g_values):
         mat = system.HF(4,g)
-        print(mat)
+   
         hfE[i] = np.linalg.eigvalsh(mat)
 
     hf = hfE[:,0]
@@ -226,4 +235,26 @@ if __name__ == "__main__":
     plt.legend()
     plt.ylabel("Energy")
     plt.title("Ground state energy as a function of g")
+    plt.show()
+
+
+    MBPT3rd= np.zeros(n)
+    MBPT2rd = np.zeros(n)
+    for i, g in enumerate(g_values):
+        MBPT3rd[i] = system.MBPT3rd(g)
+        MBPT2rd[i] = system.MBPT2rd(g)
+
+
+
+    plt.plot(g_values, exact, label="Exact", linestyle="-", color="blue", linewidth=2)
+    plt.plot(g_values, MBPT3rd, "x-",label="MBPT", color="purple", linewidth=2)
+    plt.plot(g_values, MBPT2rd, "-.",label="MBPT2", color="red", linewidth=2)
+
+
+    # Add labels, title, legend, and grid
+    plt.xlabel("g")
+    plt.ylabel("Energy")
+    plt.title("Ground State Energy as a Function of g")
+    plt.legend()
+    plt.grid()
     plt.show()

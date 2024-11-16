@@ -468,32 +468,115 @@ $$
 \ket{p+p -} = a_{p+}^{†} a_{p-}^{†} \ket{0}
 $$
 From Figure 2 in the exercise description, which displays all possible antisymmetric Goldstone diagrams to third order, we determine which diagrams contribute to the GS energy. The Hamiltonian conserves particle and hole pairs, meaning diagrams in which pairs are broken do not contribute. This leaves us with four contributing diagrams, the ones labeled 1,4,5 and 8.\\
-For each diagram we count the number of hole states (h), loops (l) and the pair states (p). Diagram 1 has $(h,l,p) =(2,2,2)$, diagram 4 has $(h,l,p) =(2,2,3)$, diagram 5 has $(h,l,p) =(4,2,3)$ and diagram 8 has $(h,l,p) =(4,3,1)$.\\
+For each diagram we count the number of hole states (h), loops (l) and the pair states (p). 
+\begin{itemize}
+    \item Diagram 1: $(h=2,p=2,l=2)$
+    \item Diagram 4: $(h=2,p=3,l=2)$
+    \item Diagram 5: $(h=4,p=3,l=2)$
+    \item Diagram 8: $(h=4,p=1,l=3)$
+\end{itemize}
 
+
+The energy contributions for each diagram are:
 \begin{itemize}
     \item Diagram 1: $(h=2,p=2,l=2)$:
     $$
-    Δ E_1 = ∑_{i=1}^{2} ∑_{a=3}^{4} \frac{ \bra{ i_{+}i_{-}} \hat{ V} \ket{a_{+}a_{-}} \bra{a_{+}a_{-}} \hat{V} \ket{i_{+}i_{-}}}{2ϵ_i - 2ϵ_a}
+    Δ E_1 = \frac{1}{4}∑_{i=1}^{2} ∑_{a=3}^{4} \frac{ \bra{ i_{+}i_{-}} \hat{ V} \ket{a_{+}a_{-}} \bra{a_{+}a_{-}} \hat{V} \ket{i_{+}i_{-}}}{2ϵ_i - 2ϵ_a}
     $$
     \item Diagram 4: $(h=2,p=3,l=2)$:
     $$
-    Δ E_4 = ∑_{i=1}^{2} ∑_{a=3}^{4} ∑_{b=3}^{4} \frac{ \bra{ i_{+}i_{-}} \hat{ V} \ket{a_{+}a_{-}} \bra{a_{+}a_{-}} \hat{V} \ket{b_{+}b_{-}} \bra{b_{+}b_{-}}\hat{V} \ket{i_{+}i_{-}} }{(2ϵ_i - 2ϵ_a)(2ϵ_i - 2ϵ_b)}
+    Δ E_4 = \frac{1}{8} ∑_{i=1}^{2} ∑_{a=3}^{4} ∑_{b=3}^{4} \frac{ \bra{ i_{+}i_{-}} \hat{ V} \ket{a_{+}a_{-}} \bra{a_{+}a_{-}} \hat{V} \ket{b_{+}b_{-}} \bra{b_{+}b_{-}}\hat{V} \ket{i_{+}i_{-}} }{(2ϵ_i - 2ϵ_a)(2ϵ_i - 2ϵ_b)}
     $$
     \item Diagram 5: $(h=4,p=3,l=2)$:
     $$
-    Δ E_5 = ∑_{i=1}^{2} ∑_{a=3}^{4} ∑_{k=1}^{2} \frac{ \bra{ i_{+}i_{-}} \hat{ V} \ket{a_{+}a_{-}} \bra{k_{+}k_{-}} \hat{V} \ket{i_{+}i_{-}} \bra{a_{+}a_{-}}\hat{V} \ket{k_{+}k_{-}} }{(2ϵ_i - 2ϵ_a)(2ϵ_k - 2ϵ_a)}
+    Δ E_5 = \frac{1}{8} ∑_{i=1}^{2} ∑_{a=3}^{4} ∑_{k=1}^{2} \frac{ \bra{ i_{+}i_{-}} \hat{ V} \ket{a_{+}a_{-}} \bra{k_{+}k_{-}} \hat{V} \ket{i_{+}i_{-}} \bra{a_{+}a_{-}}\hat{V} \ket{k_{+}k_{-}} }{(2ϵ_i - 2ϵ_a)(2ϵ_k - 2ϵ_a)}
     $$
     \item Diagram 8: $(h=4,p=1,l=3)$:
     $$
-    ΔE_8 = ∑_{i=1}^{2} ∑_{a=3}^{4}  \frac{ \bra{ i_{+}i_{-}} \hat{ V} \ket{a_{+}a_{-}} \bra{i_{+}i_{-}} \hat{V} \ket{i_{+}i_{-}} \bra{a_{+}a_{-}}\hat{V} \ket{i_{+}i_{-}}}{(2ϵ_i - 2ϵ_a)^{2}} 
+    ΔE_8 = \frac{1}{16} ∑_{i=1}^{2} ∑_{a=3}^{4}  \frac{ \bra{ i_{+}i_{-}} \hat{ V} \ket{a_{+}a_{-}} \bra{i_{+}i_{-}} \hat{V} \ket{i_{+}i_{-}} \bra{a_{+}a_{-}}\hat{V} \ket{i_{+}i_{-}}}{(2ϵ_i - 2ϵ_a)^{2}} 
     $$
   
 \end{itemize}
-Where the sums over equivalent spins are implied, so we could simplify the expressions by removing pre-factors of $2^{-p}$.
+The factors before the summations come from a formula: $ \frac{(-1)^{n_ {loops} + n_{holes}}}{2^{n_{equivivalent pairs}}}$.\\
+Now we want to simplify the expressions for the diagrams. And to do this we will use the fact that the interraction energy will contribute with $-\frac{g}{2}$ and that the single-particle energies are $ϵ_i = i-1 - \frac{g}{2}$. And so for an example case $ ϵ_i -ϵ_a = i - a$.\\
+\begin{itemize}
+    \item Diagram 1:
+    $$
+    Δ E_1 = \frac{1}{8} ∑_{i,a}^{} g^2 \frac{1}{i-a} 
+    $$
+    \item Diagram 4:
+    $$
+    Δ E_2 = - \frac{1}{32} ∑_{ i,a,c}^{} g^3 \frac{1}{(i-a)(i-c)} 
+    $$
+    \item Diagram 5:
+    $$
+    Δ E_3 = - \frac{1}{32} ∑_{ i,a,k}^{} g^3 \frac{1}{(i-a)(k-a)}
+    $$
+    \item Diagram 8:
+    $$
+    Δ E_4 = \frac{1}{16} ∑_{ i,a}^{} g^3 \frac{1}{(i-a)^2}
+    $$
+  
+\end{itemize}
+For the total energy of the system, we combine the unperturbed energy $E^{0}=2-g$, with the third order contributions:
+$$
+E = 2-g - \frac{7}{24}g^{2} -\frac{1}{12} g^{3}
+$$
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale = 0.5]{Figure_7.png}
+    \caption{Comparison of HF, Rayleigh Schrödinger 3rd order perturbation, exact solution and the approximation.
+    Energies as a function of the strength of the interaction $g$}
+    \label{fig:fig7}
+\end{figure}
 
 \subsection*{f)}
+The first order wave operator is given by:
+$$
+Ψ^{(1)} = Q \frac{1}{E_0 - H_0} \hat{V} Φ_{00}
+$$
+where Q is the projection operator that excludes the ground state, and $Φ_0$ is the unperturbed ground state. Now we want to substitute the definitions of the operators and the wave function:
+$$
+Ψ^{(1)} =  ∑_{a,b,i,j}^{} \frac{ \bra{ ab} \hat{ V} \ket{ ij}}{ ϵ_i + ϵ_j - ϵ_a - ϵ_b} \ket{ Φ_{ij}^{ab}}
+$$
+where $\ket{ Φ_{ij}^{ab}}$ are the 2p-2h states and the $ϵ$ are the single-particle energies.\\
+To simplify we reduce the summation over the indices $i,j,a,b$ to sums over energy levels, introducing a factor of 2 per spin state:
+$$
+Ψ^{(1)} = \frac{1}{8} ∑_{a,i}^{} \frac{ \bra{ i \bar{i} } \hat{V} \ket{a \bar{a}}}{ϵ_i - ϵ_a} \ket{ Φ_{i \bar{i}}^{a a \bar{a}}} 
+$$
+where the the quantum numbers $\bar{i} $ is the opposite spin of $i$.\\
+Using the interaction term $\bra{ i \bar{i} } \hat{V} \ket{a \bar{a}} = -\frac{g}{2}$, we can write the wave operator as:
+$$
+Ψ^{(1)} = -\frac{g}{4} ∑_{a,i}^{} \frac{1}{ϵ_i - ϵ_a} \ket{ Φ_{i \bar{i}}^{a a \bar{a}}}
+$$
+The second-order correction energy is given by:
+$$
+E^{(2)} = \bra{Φ_0} \hat{ V} \ket{ Ψ^{(1)}} = \frac{g}{4} ∑_{a,b,i,j}^{} \frac{\bra{ij} \hat{ V } \ket{ ab} \bra{ ab} \hat{ V}   \ket{ ij }}{ϵ_i + ϵ_j - ϵ_a - ϵ_b}
+$$
+Reducing the sum over energy levels, and accounting for spin factor, we have:
+$$
+E^{(2)} = \frac{1}{8} ∑_{a,i}^{} \frac{\bra{ i \bar{i}} \hat{ V} \ket{a \bar{a}} \bra{a \bar{a} } \hat{ V} \ket{ i \bar{i} } }{ϵ_i - ϵ_a} 
+$$
+using $\bra{ i \bar{i}} \hat{V} \ket{a \bar{a}} = -\frac{g}{2} $, this simplifies to:
+\[
+E^{(2)} = -\frac{1}{8} ∑_{a,i}^{} \frac{g^{2}}{ϵ_i - ϵ_a} 
+\]
+For a two-level spin system, summing over allowed states gives:
+\[
+E^{(2)} = -\frac{7}{24} g^{2}
+\]
+And the total energy is:
+\[
+E = 2 - g - \frac{7}{24} g^{2}
+\]
 
-
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale = 0.5]{Figure_8.png}
+    \caption{Comparison of Rayleigh Schrödinger 2nd and 3rd order perturbation, exact solution and the approximation.
+    Energies as a function of the strength of the interaction $g$}
+    \label{fig:fig8}
+\end{figure}
 \subsection*{g)}
 
 
