@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024/Arch Linux) (preloaded format=xelatex 2024.11.10)  16 NOV 2024 19:03
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024/Arch Linux) (preloaded format=xelatex 2024.11.10)  18 NOV 2024 18:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -397,9 +397,7 @@ File: ppxetex.def 2024/01/21 v0.5y Pdfpages driver for XeTeX (AM)
 \AM@lof@heading=\toks28
 \c@AM@survey=\count311
 \AM@templatesizebox=\box56
-) (/usr/share/texmf-dist/tex/latex/simpler-wick/simpler-wick.sty
-Package: simpler-wick 2015/12/11 Simpler Wick contractions
- (/usr/share/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+) (/usr/share/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
 \pgfutil@everybye=\toks29
 \pgfutil@tempdima=\dimen174
 \pgfutil@tempdimb=\dimen175
@@ -580,13 +578,17 @@ File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \tikz@expandcount=\count333
  (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
-))) (/usr/share/texmf-dist/tex/latex/pgfopts/pgfopts.sty
+))) (/usr/share/texmf-dist/tex/latex/simpler-wick/simpler-wick.sty
+Package: simpler-wick 2015/12/11 Simpler Wick contractions
+ (/usr/share/texmf-dist/tex/latex/pgfopts/pgfopts.sty
 Package: pgfopts 2014/07/10 v2.1a LaTeX package options with pgfkeys
 \pgfopts@list@add@a@toks=\toks41
 \pgfopts@list@add@b@toks=\toks42
 ) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
 File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (/usr/share/texmf-dist/tex/latex/pgf/frontendlayer/libraries/tikzlibraryexternal.code.tex (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzexternalshared.code.tex))) (/usr/share/texmf-dist/tex/latex/caption/caption.sty
+) (/usr/share/texmf-dist/tex/latex/pgf/frontendlayer/libraries/tikzlibraryexternal.code.tex (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzexternalshared.code.tex))) (/usr/share/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
+) (/usr/share/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
  (/usr/share/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
@@ -606,27 +608,27 @@ Package caption Info: hyperref package is loaded.
 ) (./midterm2.aux)
 \openout1 = `midterm2.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-Package hyperref Info: Link coloring OFF on input line 35.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+Package hyperref Info: Link coloring OFF on input line 37.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -663,19 +665,19 @@ Package hyperref Info: Link coloring OFF on input line 35.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 35.
+(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 35.
+(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 35.
+(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 35.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 35.
+(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 35.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 35.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 37.
 
 Package fontspec Info: Font family 'latinmodern-math.otf(0)' created for font
 (fontspec)             'latinmodern-math.otf' with options
@@ -707,13 +709,13 @@ Package fontspec Info: Font family 'latinmodern-math.otf(1)' created for font
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 35.
+(Font)              `operators' in the math version `normal' on input line 37.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input line 35.
+(Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input line 37.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 35.
+(Font)              `operators' in the math version `bold' on input line 37.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on input line 35.
+(Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on input line 37.
 
 Package fontspec Info: latinmodern-math scale = 1.0001.
 
@@ -777,13 +779,13 @@ Package fontspec Info: Font family 'latinmodern-math.otf(2)' created for font
 (fontspec)             \fontdimen 21\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 35.
+(Font)              `symbols' in the math version `normal' on input line 37.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on input line 35.
+(Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on input line 37.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 35.
+(Font)              `symbols' in the math version `bold' on input line 37.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on input line 35.
+(Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on input line 37.
 
 Package fontspec Info: latinmodern-math scale = 0.9999.
 
@@ -829,13 +831,13 @@ Package fontspec Info: Font family 'latinmodern-math.otf(3)' created for font
 (fontspec)             =7.2pt\relax \fontdimen 13\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 35.
+(Font)              `largesymbols' in the math version `normal' on input line 37.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on input line 35.
+(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on input line 37.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 35.
+(Font)              `largesymbols' in the math version `bold' on input line 37.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on input line 35.
+(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on input line 37.
 (/usr/share/texmf-dist/tex/latex/pdflscape/pdflscape.sty
 Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
  (/usr/share/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.sty
@@ -847,51 +849,51 @@ Package pdflscape Info: Auto-detected driver: dvipdfm (xetex) on input line 98.
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 37.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 39.
  (/usr/share/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 14.40152pt on input line 37.
+(Font)              scaled to size 14.40152pt on input line 39.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.00107pt on input line 37.
+(Font)              scaled to size 10.00107pt on input line 39.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.00075pt on input line 37.
+(Font)              scaled to size 7.00075pt on input line 39.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 14.39845pt on input line 37.
+(Font)              scaled to size 14.39845pt on input line 39.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 37.
+(Font)              scaled to size 9.99893pt on input line 39.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 37.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 37.
+(Font)              scaled to size 6.99925pt on input line 39.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 39.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 37.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 39.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 12.00128pt on input line 42.
+(Font)              scaled to size 12.00128pt on input line 44.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 8.40088pt on input line 42.
+(Font)              scaled to size 8.40088pt on input line 44.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00064pt on input line 42.
+(Font)              scaled to size 6.00064pt on input line 44.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 11.99872pt on input line 42.
+(Font)              scaled to size 11.99872pt on input line 44.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 8.3991pt on input line 42.
+(Font)              scaled to size 8.3991pt on input line 44.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 42.
+(Font)              scaled to size 5.99936pt on input line 44.
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--61
+Underfull \hbox (badness 10000) in paragraph at lines 61--63
 
  []
 
 [1
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 65--66
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
 
  []
 
@@ -903,22 +905,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [2]
-Overfull \hbox (9.7446pt too wide) detected at line 119
+Overfull \hbox (9.7446pt too wide) detected at line 121
 [][][][][][] [][][][][] [] [][][][][][] [][][][][] [] [][][][][][][][] [][][] [] [][][][] [][][][][][][] [] [][][][][][] [][][][][]
  []
 
 
-Overfull \hbox (9.7446pt too wide) detected at line 126
+Overfull \hbox (9.7446pt too wide) detected at line 128
 [][][][][][] [][][][][] [] [][][][][][] [][][][][] [] [][][][][][][][] [][][] [] [][][][] [][][][][][][] [] [][][][][][] [][][][][]
  []
 
 
-Overfull \hbox (13.94458pt too wide) detected at line 133
+Overfull \hbox (13.94458pt too wide) detected at line 135
 [][][][][][] [][][][][] [] [][][][][][] [][][][][] [] [][][][][][][][] [][][] [] [][][][] [][][][][][][] [] [][][][][][] [][][][][]
  []
 
 
-Overfull \hbox (13.94458pt too wide) detected at line 140
+Overfull \hbox (13.94458pt too wide) detected at line 142
 [][][][][][] [][][][][] [] [][][][][][] [][][][][] [] [][][][][][][][] [][][] [] [][][][] [][][][][][][] [] [][][][][][] [][][][][]
  []
 
@@ -930,7 +932,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 173--175
+Underfull \hbox (badness 10000) in paragraph at lines 175--177
 
  []
 
@@ -953,40 +955,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 File: Figure_1.png Graphic file (type bmp)
 <Figure_1.png>
 
-Overfull \hbox (9.5599pt too wide) in paragraph at lines 252--253
+Overfull \hbox (9.5599pt too wide) in paragraph at lines 266--267
  [][] 
  []
 
 File: Figure_2.png Graphic file (type bmp)
 <Figure_2.png>
 
-Overfull \hbox (9.5599pt too wide) in paragraph at lines 258--259
+Overfull \hbox (9.5599pt too wide) in paragraph at lines 272--273
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-File: Figure_3.png Graphic file (type bmp)
-<Figure_3.png>
 
-Overfull \hbox (9.5599pt too wide) in paragraph at lines 278--279
- [][] 
- []
-
-File: Figure_4.png Graphic file (type bmp)
-<Figure_4.png>
-
-Overfull \hbox (9.5599pt too wide) in paragraph at lines 284--285
- [][] 
- []
-
-File: Figure_5.png Graphic file (type bmp)
-<Figure_5.png>
-
-Overfull \hbox (9.5599pt too wide) in paragraph at lines 290--291
- [][] 
- []
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -997,12 +981,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [6]
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
@@ -1010,6 +988,38 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [7]
+File: Figure_3.png Graphic file (type bmp)
+<Figure_3.png>
+
+Overfull \hbox (9.5599pt too wide) in paragraph at lines 294--295
+ [][] 
+ []
+
+File: Figure_4.png Graphic file (type bmp)
+<Figure_4.png>
+
+Overfull \hbox (9.5599pt too wide) in paragraph at lines 300--301
+ [][] 
+ []
+
+File: Figure_5.png Graphic file (type bmp)
+<Figure_5.png>
+
+Overfull \hbox (9.5599pt too wide) in paragraph at lines 306--307
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--311
+
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1017,7 +1027,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[8]
+[8
+
+]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1026,10 +1038,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 370--372
-
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1045,16 +1053,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[11]
-File: Figure_6.png Graphic file (type bmp)
-<Figure_6.png>
+[11
 
-Overfull \hbox (9.5599pt too wide) in paragraph at lines 456--458
- [][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 461--463
+]
+Underfull \hbox (badness 10000) in paragraph at lines 577--579
 
  []
 
@@ -1066,10 +1068,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 500--502
-
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1078,11 +1076,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [13]
-File: Figure_7.png Graphic file (type bmp)
-<Figure_7.png>
+File: Figure_6.png Graphic file (type bmp)
+<Figure_6.png>
 
-Overfull \hbox (9.5599pt too wide) in paragraph at lines 527--529
+Overfull \hbox (9.5599pt too wide) in paragraph at lines 663--665
  [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 668--670
+
  []
 
 
@@ -1093,10 +1096,37 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [14]
+Underfull \hbox (badness 10000) in paragraph at lines 707--709
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[15]
+File: Figure_7.png Graphic file (type bmp)
+<Figure_7.png>
+
+Overfull \hbox (9.5599pt too wide) in paragraph at lines 734--736
+ [][] 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[16]
 File: Figure_8.png Graphic file (type bmp)
 <Figure_8.png>
 
-Overfull \hbox (9.5599pt too wide) in paragraph at lines 575--577
+Overfull \hbox (9.5599pt too wide) in paragraph at lines 783--785
  [][] 
  []
 
@@ -1110,7 +1140,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[15]
+[17]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1118,7 +1148,48 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[16] (./midterm2.aux)
+[18]
+File: Figure_9.png Graphic file (type bmp)
+<Figure_9.png>
+
+Overfull \hbox (9.5599pt too wide) in paragraph at lines 848--850
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: Figure_10.png Graphic file (type bmp)
+<Figure_10.png>
+
+Overfull \hbox (9.5599pt too wide) in paragraph at lines 857--858
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 861--862
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[19]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[20] (./midterm2.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -1129,12 +1200,12 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 30486 strings out of 476182
- 592586 string characters out of 5789077
- 1963839 words of memory out of 5000000
- 52090 multiletter control sequences out of 15000+600000
+ 30591 strings out of 476182
+ 594859 string characters out of 5789077
+ 1964839 words of memory out of 5000000
+ 52189 multiletter control sequences out of 15000+600000
  564474 words of font info for 84 fonts, out of 8000000 for 9000
  350 hyphenation exceptions out of 8191
- 99i,12n,114p,603b,638s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,12n,114p,603b,712s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on midterm2.pdf (16 pages).
+Output written on midterm2.pdf (20 pages).

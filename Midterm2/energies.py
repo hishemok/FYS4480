@@ -157,6 +157,8 @@ class manybodies:
         return 2-g -7/24*g**2 -1/12*g**3
     def MBPT2rd(self, g):
         return 2-g -7/24*g**2 
+    def MBPT4rd(self, g):
+        return 2-g -7/24*g**2 -1/12*g**3 -0.149*g**4
 
     
 
@@ -227,8 +229,8 @@ if __name__ == "__main__":
 
     hf = hfE[:,0]
 
-    plt.plot(g_values, exact, label="Exact", linestyle="-", color="blue", linewidth=2)
-    plt.plot(g_values, approx, label="Approx", linestyle="dashed", color="red", linewidth=2)
+    plt.plot(g_values, exact, label="FCI", linestyle="-", color="blue", linewidth=2)
+    plt.plot(g_values, approx, label="FCI Approx", linestyle="dashed", color="red", linewidth=2)
     plt.plot(g_values, hf, label="HF", linestyle="dashdot", color="green", linewidth=2)
     plt.xlabel("g")
     plt.grid()
@@ -238,17 +240,22 @@ if __name__ == "__main__":
     plt.show()
 
 
-    MBPT3rd= np.zeros(n)
-    MBPT2rd = np.zeros(n)
+    RS3= np.zeros(n)
+    RS2 = np.zeros(n)
+    RS4 = np.zeros(n)
     for i, g in enumerate(g_values):
-        MBPT3rd[i] = system.MBPT3rd(g)
-        MBPT2rd[i] = system.MBPT2rd(g)
+        RS3[i] = system.MBPT3rd(g)
+        RS2[i] = system.MBPT2rd(g)
+        RS4[i] = system.MBPT4rd(g)
 
 
 
-    plt.plot(g_values, exact, label="Exact", linestyle="-", color="blue", linewidth=2)
-    plt.plot(g_values, MBPT3rd, "x-",label="MBPT", color="purple", linewidth=2)
-    plt.plot(g_values, MBPT2rd, "-.",label="MBPT2", color="red", linewidth=2)
+    plt.plot(g_values, exact, label="FCI", linestyle="-", color="blue", linewidth=2)
+    plt.plot(g_values, RS3, "x-",label="RS3", color="purple", linewidth=2)
+    plt.plot(g_values, hf, label="HF", linestyle="dashdot", color="green", linewidth=2)
+
+    # plt.plot(g_values, RS2, "-.",label="RS2", color="red", linewidth=2)
+    # plt.plot(g_values, RS4, "--",label="RS4", color="green", linewidth=2)
 
 
     # Add labels, title, legend, and grid
@@ -257,4 +264,19 @@ if __name__ == "__main__":
     plt.title("Ground State Energy as a Function of g")
     plt.legend()
     plt.grid()
+    plt.show()
+
+    dRS3 = exact-RS3
+    dRS2 = exact-RS2
+    dRS4 = exact-RS4
+    dHF = exact-hf
+    plt.plot(g_values, dRS3, label="RS3", linestyle="solid", color="blue", linewidth=2)
+    plt.plot(g_values, dRS2, label="RS2", linestyle="dashed", color="red", linewidth=2)
+    plt.plot(g_values, dRS4, "-.",label="RS4", color="green", linewidth=2)
+    plt.plot(g_values, dHF, "-x",label="HF", color="purple", linewidth=2)
+    plt.xlabel("g")
+    plt.ylabel("Δ E")
+    plt.title("Ground state energy difference as a function of g")
+
+    plt.legend()
     plt.show()
