@@ -1,0 +1,25 @@
+\frametitle{Author and title}
+Eh Eh
+%   You specify
+%   \begin{itemize}
+%   \item your name,
+%   \item the title and
+%   \item the subtitle (if any)
+%   \end{itemize}
+%   of your presentation using the standard \LaTeX{} commands
+
+%   \medskip
+%   \begin{Verbatim}[fontsize=\footnotesize]
+% \title{Title of my talk}
+% \subtitle{My chosen subtitle}
+% \author{My name}
+%   \end{Verbatim}
+
+%   \bigskip
+%   Additionally, you can specify your e-mail address with a command
+%   provided by the UiO theme:
+
+%   \medskip
+%   \begin{Verbatim}[fontsize=\footnotesize]
+% \uioemail{me@uio.no}
+%   \end{Verbatim}

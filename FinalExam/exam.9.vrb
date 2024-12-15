@@ -1,0 +1,22 @@
+\frametitle{An example}
+
+%   \medskip
+%   \begin{Verbatim}[fontsize=\scriptsize]
+% \documentclass[norsk,aspectratio=169]{beamer}
+% \usepackage[utf8]{inputenc}
+% \usepackage{babel, textcomp}
+% \usetheme[toc, summary]{UiO}
+
+% \title{Title of my talk}
+% \subtitle{A suitable subtitle}
+% \author{My name}   \uioemail{me@uio.no}
+
+% \begin{document}
+% \uiofrontpage[...]
+
+% \section{...}
+% \subsection{...}
+% \begin{frame}
+%   \frametitle{...}
+%     :
+%   \end{Verbatim}

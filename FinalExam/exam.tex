@@ -1,0 +1,398 @@
+\documentclass[UKenglish,aspectratio=169,12pt]{beamer}
+% \usepackage{unicode-math}
+% \setmathfont{latinmodern-math.otf}
+% \usepackage[utf8]{inputenc}
+% \usepackage{babel, fancyvrb, textcomp, bookmark}
+\usepackage{physics}
+
+\usetheme[toc, sectionsep=uioblue2, summary, uiostandard]{UiO}
+
+\newcommand{\Dots}{\ensuremath{\ldots}}
+\newcommand{\p}[1]{\texttt{#1}}
+% \newcommand{\pb}[1]{\textbf{\p{#1}}}
+\newcommand{\pcmd}[1]{\p{\textbackslash #1}}
+\newcommand{\penv}[1]{\pcmd{begin}\ppar{#1} \Dots{} \pcmd{end}\ppar{#1}}
+\newcommand{\ppar}[1]{\p{\{#1\}}}
+\newcommand{\zip}{\textsc{zip}}
+
+\author{Hishem Kløvnes}
+% \uioemail{dag@ifi.uio.no}
+\title{Final Exam}
+\subtitle{Quantum Mechanics for Many-Particle Systems 2024}
+
+\begin{document}
+
+
+\uiofrontpage[dept={Department of Physics},
+  info={Final Exam}]
+
+
+\section{Introduction}
+\subsection{Second Quantization}
+\subsection{Wicks Theorem}
+\subsection{Particle Hole Formalism}
+
+% \subsection{FCI}
+% \subsection{Hartree-Fock}
+% \subsection{Many-body perturbation theory}
+% \subsection{Couple-cluster theory}
+
+\begin{frame}
+    \frametitle{Technical background}
+    \begin{itemize}
+        \item Second Quantization
+        \item Wicks Theorem
+        \item Particle Hole Formalism      
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Second Quantization}
+    Introducing creation and annihilation operators, simplifies the notation of many-body systems. 
+    \[
+        \hat{a}^\dagger_i \ket{0} = \ket{i}
+    \]
+    Here we usually prefer to use indexes $i,j,k\cdots $ to denote states below Fermi-level and $a,b,c\cdots$ to denote states above Fermi-level. 
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Wicks Theorem}
+    
+    \begin{itemize}
+        \item Simplifies long and complicated expressions
+        \item Reduces the number of terms in the expansion
+        \item Expresses normal ordering in terms of contractions
+        \item Usefull tool for diagrammatic representations
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Particle Hole Formalism}
+    Given a refrence state $\ket{\Phi_0}$, we often work with operators that create or annihilate particles in this state. This gives rise to the particle-hole formalism.\\
+    For instance 1-particle 1-hole $(1p 1h)$, 2-particles 2-holes $(2p 2h)$, etc\dots
+    \[
+        \ket{\Phi_i^a} = a^\dagger_a a_i \ket{\Phi_0}
+    \]
+    In essence, we just moved a particle from state $i$ to state $a$.
+    This notation is a compact and easy to read way of expressing the state of the system.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Motivation}
+    The main goal today is to understand the different methods used to solve a many-body system.
+    \[
+        \bra{\Psi_0} \hat{H} \ket{\Psi_0} = E \bra{\Psi_0} \ket{\Psi_0}
+    \]
+    where:
+    \[
+        \hat{H} = \hat{H}_0 + \hat{H}_I
+    \]
+    \[
+    \hat{H}_0 = \sum_{\alpha \beta}^{}\bra{ \alpha} h_0 \ket{\beta} \hat{a}^\dagger_\alpha \hat{a}_\beta \quad \hat{H}_I= \frac{1}{4} \sum_{\alpha\beta\delta\gamma}^{}\bra{\alpha\beta} v \ket{\delta\gamma} \hat{a}^\dagger_\alpha \hat{a}^\dagger_\beta \hat{a}_\gamma \hat{a}_\delta
+    \]
+
+    This can be a difficult task when applied to a system of many particles, due to the interraction term.
+\end{frame}
+
+\section{Full Configuration Interaction}
+
+\begin{frame}
+    \frametitle{Full Configuration Interaction}
+    \textbf{Introduce approximate wave function}\\
+    The simplest choice for many-body wave functions are product wave functions:
+    \[
+        \Psi(x_1,x_2,\dots ,x_N) \approx \phi_1(x_1)\phi_2(x_2)\dots \phi_N(x_N)
+    \]
+    Such states are easy to work with, if there aren't any correlations between the single-particle states $\phi_i(x_i)$. 
+    However, this does not necessarily imply the antisymmetry of the wave function, which is required by fermions. 
+    \[
+        \Psi(x_1,x_2,\dots ,x_N) = - \Psi(x_2,x_1,\dots ,x_N)
+    \]
+\end{frame}
+
+\begin{frame}
+    \textbf{Pauli Exclusion Principle}\\
+    However, writing on determinantal form:
+    \[
+        \Psi ( x_1,x_2,x_3,\dots ,x_N) = \frac{1}{\sqrt{N!}} \text{det} 
+        \begin{bmatrix} 
+         \phi_1 (x_1) & \phi_1(x_2) & \dots & \phi_1(x_N)\\ 
+        \phi_2(x_1) & \phi_2 (x_2) & \dots & \phi_2(x_N)\\ 
+         \vdots\\ \\
+        \phi_N(x_1) & \phi_N(x_2) & \dots & \phi_N(x_N)\\ 
+        \end{bmatrix}
+    \]
+    Pauli exclusion principle, and the antisymmetry of the fermion wave function, is automatically satisfied.
+    This forces no two rows/cols to be equal $(\text{det}=0)$. Also it follows that interchanging two rows/cols gives a change of sign.
+\end{frame}
+
+\begin{frame}
+    \textbf{Change of representations}\\
+    Working with large slater determinants, becomes chaotic very quickly (Not good for a many body system...). So we change the representation.
+    To each single-particle state $\phi_i(x)$ we associate a creation operator $\hat{a}^{\dagger} _i$ and an annihilation operator $\hat{a} _i$. 
+
+    When acing on the vacuum state $\ket{ 0}$, the creation operator $\hat{a} ^{\dagger} _i$ cause a particle to occupy the single-particle state $\phi_i(x)$:
+    \[
+    \phi_i(x) \rightarrow \hat{a} ^{\dagger} _i \ket{0}
+    \]
+    And for multiple creation operators, we can occupy multiple states:
+    \[
+    \phi_i (x_1) \phi_j(x_2) \phi_k(x_3) \rightarrow \hat{a}^{\dagger}_i \hat{a}^{\dagger}_j \hat{a} ^{\dagger}_k \ket{0} 
+    \]
+  
+\end{frame}
+
+\begin{frame}
+    \textbf{Defining our ansatz}\\
+    Now we impose antisymmetry, by having the fermion operators satisfy the \textit{anticommutation relations}:
+    \[
+        \hat{a} ^{\dagger} _i \hat{a} ^{\dagger} _j  + \hat{a}_{j}^{\dagger} \hat{a}_{i}^{\dagger}= [\hat{a}^{\dagger}_i,\hat{a}^{\dagger}_j]_+ = \left\{\hat{a}^{\dagger}_i,\hat{a}^{\dagger}_j\right\} = 0
+    \]
+    this enforces the Pauli exclusion principle. And thus we are ready to define our ansatz as:
+    \[
+        \ket{\Phi_0} = \left(\prod_{i\leq F} \hat{a} ^{\dagger} _i\right) \ket{ 0}
+    \]
+\end{frame}
+
+\begin{frame}
+    \textbf{Expanding the exact state}\\
+    We use our definitions of particle-hole states to expand the exact state wave function:
+    \[
+    \ket{\Psi_0} = C_0 \ket{\Phi_0} + \sum_{ai} C_i ^a \ket{\Phi_i ^a } + \sum_{abij}C_{ij}^{ab} \ket{ \Phi_{ij}^{ab}} + \dots = (C_0 + \hat{C} )\ket{\Phi_0}
+    \]
+    On a more compact form:
+    \[
+        \ket{\Psi_0} = \sum_{PH} C_H^P \Phi_H^P = \left( \sum_{PH} C_H^P \hat{A}_H^P \right)\ket{\Phi_0} 
+    \]
+    where H stands for $0,1,\dots,n$ holes and P for $0,1,\dots,n$ particles states. We require normalization, which gives:
+    \[
+        \bra{  \Psi_0} \ket{\Phi_0} = \sum_{PH} | C_H^P |² = 1 
+    \]
+\end{frame}
+
+\begin{frame}
+    \textbf{Finding the energy}\\
+    \[
+        E = \bra{ \Psi_0} \hat{H} \ket{\Phi_0} = \sum_{PP' H H'} C^{*P}_H  \bra{ \Phi_H^P } \hat{H} \ket{ \Phi_{H'}^{P'}}C_{H'}^{P'}
+    \]
+    Normally, this is solved by diagonalization.  A diagonalization is equivalent to finding the variational minimum of:
+    \[
+        \bra{ \Psi_0} \hat{H} \ket{\Phi_0} - \lambda \bra{ \Psi_0} \ket{ \Phi_0},
+    \]
+    and after some algebra, we the expression:
+    \[
+        \sum_{P'H'} \bra{ \Phi_H^P} \hat{H} - E \ket{ \Phi_{H'}^{P'}} = 0
+    \]
+    all we need to do is solve for the coefficient $C_H^P$.
+\end{frame}
+
+\begin{frame}
+    \textbf{Observations of the method}\\
+    The FCI method is a very powerful method, but it is also very computationally expensive, as the computational cost grows exponentially with the number of particles. However, for smaller systems, this is often used as a benchmark for other methods, as it provides an exact solution to the many-body problem, and does not rely on any other approximations.
+\end{frame}
+
+\section{Hartree-Fock}
+
+\begin{frame}
+    \frametitle{Hartree-Fock}
+    \textbf{Introduction}\\
+    Hartree-Fock theory is an algorithm for finding an approximation to the ground state energy with a given Hamiltonian. Using a single particle basis $\psi_\alpha$. Here we try to solve the given eigenvalue problem:
+    \[
+        \hat{h}^{\text{HF}}\psi_{\alpha} = \epsilon_{\alpha}\psi_{\alpha} \quad , \quad \hat{h}^{\text{HF}} = \hat{t} + \hat{u}_{\text{ext}} + \hat{u}^{\text{HF}}.
+    \]
+
+    with $\hat{u}_{\text{ext}}$ being zero for electrons around the nucleus. $\hat{t}$ being kinetic energy and $\hat{u}^{\text{HF}}$ being the Hartree-Fock potential.
+\end{frame}
+
+\begin{frame}
+    \textbf{Variational principle}\\
+    The algorithm tries to find an $\hat{u}^{\text{HF}}$, such that 
+    \[
+    \langle\hat{H}\rangle = E^{\text{HF}} = \bra{\phi_0}\hat{H}\ket{\phi_0}
+    \]
+    with $\phi_0$ being some ansatz. 
+
+    The \textbf{variational principle} ensures that 
+    \[
+    E^{\text{HF}} \ge E_0.
+    \]
+\end{frame}
+
+\begin{frame}
+    \textbf{Purpose}\\
+    When calculating the energies of all electrons around a nucleus, we know the large majority of their energies comes from their attraction to the nucleus and their kinetic energy orbiting it. If we wan't a more accurate picture, we must also take into account the interactions between all electrons. This is now a \textit{many-body problem}, with no analytical solution. We therefore have to use an approximation. 
+\end{frame}
+
+\begin{frame}
+    \frametitle{Method}
+    \textbf{Theoretically Convenient}\\
+    A simple way to define the Hartree-Fock operator $\hat{h}^{\text{HF}}$ is by splitting it into the sum of the one-body part $\hat{h}_{0}$, direct $V^{d}$ and exchange $V^{e}$ terms. 
+    \[
+        \hat{h}^{\text{HF}} = \hat{h}_{0}(x_{i}) + \sum_{i=1}^{N} V_{i}^{d}(x_{i}) - \sum_{i=1}^{N} V_{i}^{e}(x_{i})
+    \]
+    Where $\hat{u}^{HF}$ is the sum of the direct and exchange terms.
+\end{frame}
+
+\begin{frame}
+    \textbf{Change of basis}\\
+    Instead of solving the equation of our previous slide, we can vary the coefficients of our single-particle states $\psi_{\alpha}$, and minimize the energy.  The new single-particle basis will be defined through a unitary transformation. \textit{The unitary transformation keeps the basis orthogonal}:
+    \[
+        \psi_{p}^{\text{HF}} = \sum_{\lambda} C_{p\lambda}\phi_{\lambda}.
+    \]
+  where the Greek letters comes from the previous basis, and the Latin from the new basis. 
+\end{frame}
+
+\begin{frame}
+    \textbf{Minimizing the energy}\\
+    As we vary the coefficients, the new Slater determinant $\phi^{\text{HF}}$ varies. This makes $E$ a functional of the slater determinant:
+    \[
+        E\left[\phi^{\text{HF}}\right] = \sum_{i=1}^{N} \bra{i}\hat{h}\ket{i} + \frac{1}{2} \sum_{i,j = 1}^{N} \bra{ij}\hat{v}\ket{ij}_{AS}. 
+    \]
+    rewriting with our new basis:
+    \[
+        E\left[\Psi\right] = \sum_{i=1}^{N}\sum_{\alpha\beta} C^{*}_{i\alpha}C_{i\beta} \bra{\alpha}\hat{h}\ket{\beta} + \frac{1}{2} \sum_{i,j = 1}^{N}\sum_{\alpha\beta\gamma\delta} C^{*}_{i\alpha}C^{*}_{j\beta}C_{i\gamma}C_{j\delta} \bra{\alpha\beta}\hat{v}\ket{\gamma\delta}_{AS}.
+    \]
+\end{frame}
+
+\begin{frame}
+    \textbf{Minimizing the energy}\\
+    With our last equation from our previous slide, we can do some variational mathematics to find the minimum of the energy. After that, we are left with a simple eigenvalue problem:
+    \[
+        \sum_{\beta} h^{\text{HF}}_{\alpha\beta} C_{i\beta} = \epsilon_{i}^{\text{HF}}C_{i\alpha},
+    \]
+    where:
+    \[
+        h^{HF}_{\alpha\beta} = \bra{\alpha}\hat{h}\ket{\beta} + \sum_{j}^{N}\sum_{\gamma\delta} C^{*}_{j\gamma}C_{j\delta} \bra{\alpha\gamma}\hat{v}\ket{\beta\delta}_{AS}.
+    \]
+  
+\end{frame}
+
+\begin{frame}
+    \textbf{Algorthm}\\
+    We start to solve the eigenvalue problem with some guess for the coefficients $C_{i\alpha}$. We then calculate the new coefficients, and iterate until we reach convergence. (Not necessarily convergence, but at least until the difference in eigenvalues is satisfactory small).
+  
+\end{frame}
+
+\begin{frame}
+    \textbf{Observations}\\
+    The Hartree-Fock method gives an efficient and approximate solution to the many-body problem. It approximates the many-electron wavefunction as a single Slater determinant, capturing mean-field effects. However, it neglects electron correlation, leading to errors in the total energy. Despite this, HF is computationally efficient and often used as a starting point for more advanced methods, such as Coupled Cluster or Configuration Interaction.
+\end{frame}
+
+\section{Many-body perturbation theory}
+
+\begin{frame}
+    \frametitle{Many-body perturbation theory}
+    \textbf{Introducing the interaction term}\\
+    We start by expanding the exact ground state wave function in term of a series of Slater determinants:
+    \[
+        \ket{\Psi_0} = \ket{\Phi_0} + \sum_{m=1}^\infty C_m \ket{ \Phi_m}
+    \]
+    where we have assumed that the true ground state is dominated by the solution of the unperturbed problem: 
+    \[
+        \hat{H}_0 \ket{\Phi_0} = W_0 \ket{\Phi_0}
+    \]
+\end{frame}
+\begin{frame}
+\textbf{Introducing the interaction term}\\
+  $\ket{\Psi_0}$ is not normalized, however $\bra{ \Phi_0} \ket{\Psi_0} = 1$.
+  Writing the total energy, along with the ground state energy:
+  \[
+    \bra{ \Phi_0}\hat{H} \ket{ \Psi_0} = E \bra{\Phi_0}\ket{\Psi_0}=E
+  \]
+  \[
+    \bra{ \Psi_0}\hat{H}_{0} \ket{ \Phi_0} = W_0 \bra{\Psi_0}\ket{\Phi_0}=W_0
+  \]
+  we are able to identify the interacion term as:
+  \[
+    \Delta E = E-W_0 = \bra{ \Phi_0} \hat{H}_I \ket{\Psi_0}
+  \]
+  This quantity, we refer to as the correlation energy.
+\end{frame}
+
+\begin{frame}
+    \textbf{Perturbation}\\
+     In order to obtain a perturbative expansion, we need to expand the exact wave function in terms of $\hat{H}_I$. We start by expanding the schrödinger equation, and rearringing it:
+     \[
+        - \hat{H}_0 \ket{ \Psi_0} = (-E + \hat{H}_I) \ket{\Psi_0}
+     \]
+     adding a term $\omega \ket{\Phi_0}$ and projecting on $\ket{\Phi_0}$ we obtain the following equation:
+     \[
+        \ket{\Psi_0} = \ket{\Phi_0} + \frac{\hat{Q}}{\omega-\hat{H}_0} (\omega-E+\hat{H}_I)\ket{\Psi_0}
+     \]
+     the energy dependent variable $\omega$ is not yet defined as it varies for different methods.
+\end{frame}
+
+\begin{frame}
+    \textbf{Perturbation Equation}\\
+    If we take the previous equation and set it up for an iterative scheme, we obtain the following equation:
+    \[
+        \ket{\Psi_0} = \sum_{i=0}^\infty \left\{\frac{\hat{Q}}{\omega-\hat{H}_0}(\omega-E+\hat{H}_I)\right\}^i \ket{\Phi_0}
+    \]
+    with $\ket{\Psi_0} = \ket{\Phi_0}$ as an inital quess, and wher $\hat{Q}$ is defined as:
+    \[
+    \hat{Q} = \sum_{m=1}^{\infty} \ket{\Phi_m}\bra{\Phi_m}
+    \]
+\end{frame}
+
+\begin{frame}
+    \textbf{Correlation Energy}\\
+    From the last slide, it is apparent that the iterative formula for the correlation energy is:
+    \[
+        \Delta E = \sum_{i=0}^\infty \bra{\Phi_0} \hat{H}_I \left\{\frac{\hat{Q}}{\omega-\hat{H}_0}(\omega-E+\hat{H}_I) \right\}^i \ket{\Phi_0}
+    \]
+\end{frame}
+
+\begin{frame}
+    \textbf{Brillouin-Wigner}\\
+    The Brillouin-Wigner perturbation method sets $\omega = E$, and we obtain the following expression for the correlation energy:
+    \[
+        \Delta E = \sum_{i=0}^\infty \bra{\Phi_0} \hat{H}_I \left\{\frac{\hat{Q}}{\omega-\hat{H}_0}(\omega-E+\hat{H}_I) \right\}^i \ket{\Phi_0}=
+    \]
+    \[
+        \bra{ \Phi_0} \left(\hat{H}_I + \hat{H}_I \frac{\hat{Q}}{E-\hat{H}} \hat{H}_I + \hat{H}_I \frac{\hat{Q}}{E-\hat{H}} \hat{H}_I \hat{H}_I \frac{\hat{Q}}{E-\hat{H}} \hat{H}_I +\dots\right)\ket{\Phi_0}
+    \]
+    This method assumes that we know the exact energy $E$, and is also an implicit method.
+\end{frame}
+
+\begin{frame}
+    \textbf{Rayleigh-Schrödinger}\\
+    The Rayleigh-Schrödinger perturbation method sets $\omega = W_0$, and we obtain the following expression for the correlation energy:
+    \[
+        \sum_{i=0}^\infty \bra{\Phi_0} \hat{H}_I \left\{\frac{\hat{Q}}{\omega-\hat{H}_0}(\hat{H}_I -\Delta E)\right\}^i \ket{\Phi_0}=
+    \]
+    which again is an implicit method.
+\end{frame}
+\begin{frame}
+    \textbf{however...}\\
+    We can solve $\Delta E$ separately, making it much easier to work with. 
+    \[
+        \Delta E = \sum_{i=0}^\infty \Delta E^{(i)}
+    \]
+    ex:
+    \[
+        \Delta E^{(1)} = \bra{\Phi_0} \hat{H}_I \ket{\Phi_0}
+    \]
+    \[
+        \Delta E^{(2)} = \bra{\Phi_0} \hat{H}_I \frac{\hat{Q}}{W_0-\hat{H}_0} \hat{H}_I \ket{\Phi_0}
+    \]
+    and so on. And thus we can solve the correlation energy $\Delta E$ with a simple marching scheme.
+\end{frame}
+
+\begin{frame}
+    \textbf{Observations}\\
+    The many-body perturbation theory is a powerful method for solving the many-body problem. We have two different approaches to the perturbation problem.\\
+    (BW), which assumes that we know the exact energy $E$, and (RS) assumes a known $W_0$. \\In many cases, both methods can make good approximations to the correlation energy. \\
+    The method is built on the assumption that the perturbation is small. \\
+    The method is not variational, so adding more terms, does not necessarily give a better approximation.
+\end{frame}
+
+
+\section{Couple-cluster theory}
+
+\begin{frame}
+    \frametitle{Couple-cluster theory}
+
+\end{frame}
+
+\end{document}

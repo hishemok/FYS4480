@@ -1,0 +1,8 @@
+\beamer@sectionintoc {1}{Introduction}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{Second Quantization}{4}{0}{1}
+\beamer@subsectionintoc {1}{2}{Wicks Theorem}{4}{0}{1}
+\beamer@subsectionintoc {1}{3}{Particle Hole Formalism}{4}{0}{1}
+\beamer@sectionintoc {2}{Full Configuration Interaction}{9}{0}{2}
+\beamer@sectionintoc {3}{Hartree-Fock}{18}{0}{3}
+\beamer@sectionintoc {4}{Many-body perturbation theory}{29}{0}{4}
+\beamer@sectionintoc {5}{Couple-cluster theory}{40}{0}{5}
