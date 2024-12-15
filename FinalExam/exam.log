@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024/Arch Linux) (preloaded format=xelatex 2024.12.8)  15 DEC 2024 22:13
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024/Arch Linux) (preloaded format=xelatex 2024.12.8)  15 DEC 2024 23:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1476,9 +1476,45 @@ File: uio-fp-navn-eng.pdf Graphic file (type pdf)
 ]
 File: uio-fp-navn-eng.pdf Graphic file (type pdf)
 <use uio-fp-navn-eng.pdf>
+
+Overfull \vbox (1.25182pt too high) detected at line 408
+ []
+
 File: uio-fp-navn-eng.pdf Graphic file (type pdf)
 <use uio-fp-navn-eng.pdf>
- [42
+[42
+
+]
+File: uio-fp-navn-eng.pdf Graphic file (type pdf)
+<use uio-fp-navn-eng.pdf>
+File: uio-fp-navn-eng.pdf Graphic file (type pdf)
+<use uio-fp-navn-eng.pdf>
+ [43
+
+]
+File: uio-fp-navn-eng.pdf Graphic file (type pdf)
+<use uio-fp-navn-eng.pdf>
+File: uio-fp-navn-eng.pdf Graphic file (type pdf)
+<use uio-fp-navn-eng.pdf>
+ [44
+
+]
+File: uio-fp-navn-eng.pdf Graphic file (type pdf)
+<use uio-fp-navn-eng.pdf>
+File: uio-fp-navn-eng.pdf Graphic file (type pdf)
+<use uio-fp-navn-eng.pdf>
+ [45
+
+]
+File: uio-fp-navn-eng.pdf Graphic file (type pdf)
+<use uio-fp-navn-eng.pdf>
+
+Overfull \vbox (4.35664pt too high) detected at line 458
+ []
+
+File: uio-fp-navn-eng.pdf Graphic file (type pdf)
+<use uio-fp-navn-eng.pdf>
+[46
 
 ]
 \tf@nav=\write6
@@ -1492,7 +1528,7 @@ File: uio-fp-navn-eng.pdf Graphic file (type pdf)
 
 File: uio-fp-navn-eng.pdf Graphic file (type pdf)
 <use uio-fp-navn-eng.pdf>
- (./exam.toc) [43
+ (./exam.toc) [47
 
 
 ] (./exam.aux)
@@ -1509,12 +1545,12 @@ Package rerunfilecheck Info: File `exam.out' has not changed.
 (rerunfilecheck)             Checksum: 887B6203E5000AF96E282FE432157EB4;1208.
  ) 
 Here is how much of TeX's memory you used:
- 27622 strings out of 476182
- 552151 string characters out of 5789078
+ 27630 strings out of 476182
+ 552223 string characters out of 5789078
  1927839 words of memory out of 5000000
- 49084 multiletter control sequences out of 15000+600000
+ 49092 multiletter control sequences out of 15000+600000
  580302 words of font info for 119 fonts, out of 8000000 for 9000
  350 hyphenation exceptions out of 8191
  128i,16n,153p,494b,655s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on exam.pdf (43 pages).
+Output written on exam.pdf (47 pages).

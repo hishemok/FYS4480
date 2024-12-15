@@ -392,7 +392,68 @@
 
 \begin{frame}
     \frametitle{Couple-cluster theory}
+    \textbf{Introduction}\\
+    Couple cluster theory is also a method for solving the many-body problem. It uses an exponential cluster operator to account for electron correlation. 
+    \[
+    \ket{\Psi} = e^{\hat{T}}\ket{\Phi_0}
+    \]
+    where $\hat{T}$ is the cluster operator.
+    \[
+    \hat{T} = \hat{T}_1 + \hat{T}_2 + \hat{T}_3 + \dots
+    \]
+    \[
+    \hat{T}_1 = \sum_{ai} t_{i}^{a} \hat{a}^{\dagger}_a \hat{a}_i \quad \hat{T}_2 =  \frac{1}{4} \sum_{abij} t_{ij}^{ab} \hat{a}^{\dagger}_a \hat{a}^{\dagger}_b \hat{a}_j \hat{a}_i \quad \cdots   
+    \]
+    where $\hat{T}_n$ is the n-body cluster operator. We need to truncate at some point to make the method computationally feasible.
+\end{frame}
+
+\begin{frame}
+    \textbf{Truncations}\\
+    \[
+    \text{CCS} \rightarrow \hat{T} = \hat{T}_1
+    \]
+    \[
+    \text{CCSD} \rightarrow \hat{T} = \hat{T}_1 + \hat{T}_2
+    \]
+    \[
+    \text{CCSDT} \rightarrow \hat{T} = \hat{T}_1 + \hat{T}_2 + \hat{T}_3
+    \]
+    \[
+    \text{CCSDTQ} \rightarrow \hat{T} = \hat{T}_1 + \hat{T}_2 + \hat{T}_3 + \hat{T}_4
+    \]
+    and so on. The more terms we include, the more accurate the method becomes, but also the more computationally expensive.
+\end{frame}
+\begin{frame}
+    \textbf{Similarity transformed Hamiltonian}\\
+    The similarity transformed Hamiltonian is defined as:
+    \[
+    \bar{H}_N = e^{-\hat{T}}\hat{H}_Ne^{\hat{T}}
+    \]
+    where 
+    \[
+    \bar{H}_N \ket{\Phi_0} = E_c \ket{\Phi_0}
+    \]
+    and the total energy is given by:
+    \[
+    E = E_{HF} + E_c
+    \]
+\end{frame}
+
+
+\begin{frame}
+    \textbf{Observations}\\
+    The couple cluster method works up until mass number $A \approx 100$. This is good compared to FCI, which has an exponential cost. \\
+    The exponential operator guarantees size extensivity, meaning the energy scales correctly as the system increases.\\
+    One problem is that we have a non-Hermitian Hamiltonian, which makes imaginary eigenvalues a possibility.\\
+    Truncations allow for systemmaticaly improved approximations.
 
 \end{frame}
 
+\begin{frame}
+  \frametitle{Final Comparisons}
+    The FCI method, is the gold standard for apprimations, as it provides an exact solution to the many-body problem. However, it is computationally expensive.\\
+    The Hartree-Fock method is a good starting point for more advanced methods, as it captures mean-field effects. However, it neglects electron correlation.\\
+    The many-body perturbation method is a systematic way to account for electron correlation using perturbation theory, but convergence issues can arise for strongly correlated systems.\\
+    The couple cluster method is a powerful method for solving the many-body problem, as it accounts for electron correlation using an exponential cluster operator. However, it is computationally expensive and can have convergence issues for strongly correlated systems.
+\end{frame}
 \end{document}
